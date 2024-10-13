@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lora', serif;
+    background-color: #1E3A5F;
+}
+
+h1 {
+    font-family: 'Lora', serif;
+    font-weight: 700; /* bold weight */
+    text-align: center;
+    color: #F1F1F1;
+}
+
+div.titol{
+    display: block;
+    width: 100%;
+}
+
+i{
+
+    color: #ffffff;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px #000 solid;
+    padding: 10px;
+}
+
+header i{
+    padding-top: 15px;
+}
+
+.logo-img{
+    width: 40px;
+}
+
+nav.mobile-navbar{
+    display: none;
+}
+
+
+.sketchfab-embed-wrapper, .proces, .historia{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    height: 300px;
+    background-color: #00203F;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.sketchfab-embed-wrapper iframe{
+    text-align: center;
+    height: 200px;
+    width: 360px;
+ 
+}
+
+.proces, .historia{
+    margin-top: 40px;
+    background-color: #f1f1f1f1;
+    height: 150px;
+
+}
