@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,66 +8,185 @@
 
 body {
     font-family: 'Lora', serif;
-    background-color: #1E3A5F;
+    background-color: #F1F1F1;
 }
 
 h1 {
-    font-family: 'Lora', serif;
-    font-weight: 700; /* bold weight */
+    font-weight: 700;
     text-align: center;
-    color: #F1F1F1;
+    color: #595959;
 }
 
-div.titol{
-    display: block;
+.titol {
     width: 100%;
 }
 
-i{
-
-    color: #ffffff;
+i {
+    color: #000;
 }
 
-header{
+header {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px #000 solid;
     padding: 10px;
+    background-color: #F1F1F1; /* Cambiado a color sólido */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    z-index: 1000; /* Asegura que el header se superponga a otros elementos */
 }
 
-header i{
+
+main {
+    margin-top: 80px;
+}
+
+header i {
     padding-top: 15px;
 }
 
-.logo-img{
+.logo-img {
     width: 40px;
 }
 
-nav.mobile-navbar{
+nav.mobile-navbar {
     display: none;
 }
 
-
-.sketchfab-embed-wrapper, .proces, .historia{
+.sketchfab-embed-wrapper {
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: center;
-    height: 300px;
-    background-color: #00203F;
-    border-radius: 5px;
+    height: 500px;
+    background-color: #F2F2F2;
+    border-radius: 2px;
+    border-color: #eaeeec;
     margin: 10px;
 }
 
-.sketchfab-embed-wrapper iframe{
-    text-align: center;
-    height: 200px;
-    width: 360px;
- 
+.contenidor-cards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.proces, .historia{
-    margin-top: 40px;
-    background-color: #f1f1f1f1;
-    height: 150px;
+.card {
+    width: 450px;
+    height: 350px;
+    margin: 50px;
+    position: relative;
+    perspective: 1000px; /* Se puede mantener si quieres un efecto 3D */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra añadida */
+    transition: transform 0.3s ease; /* Transición suave al girar */
+}
 
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Ocultar la cara posterior cuando no se ve */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #7BE0AD;
+    border-radius: 5px;
+    padding: 1.2em;
+    transition: opacity 0.6s ease; /* Transición de desvanecimiento */
+}
+
+.card-front {
+    background-color: rgba(0, 0, 0, 0); /* Fondo transparente */
+    color: #7BE0AD;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.card-back {
+    background-color: #7BE0AD; /* Fondo de la cara posterior */
+    color: #011627; /* Color del texto en la parte posterior */
+    opacity: 0; /* Inicialmente oculta (transparente) */
+}
+
+.card.active .card-front {
+    opacity: 0; /* Desvanece el frente cuando está activa */
+}
+
+.card.active .card-back {
+    opacity: 1; /* Muestra la parte posterior cuando está activa */
+}
+
+.card.active .card-back {
+    transform: rotateY(0deg); /* Muestra la parte posterior cuando está activa */
+}
+
+
+/* Estilos del iframe */
+.sketchfab-embed-wrapper iframe {
+    width: 400px;
+    height: 350px;
+    text-align: center;
+}
+
+.card-back p{
+    font-size: 20px;
+}
+
+.image-slider {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 20px auto; /* Center the slider */
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+    margin: 10px;
+}
+
+.slider img {
+    width: 100%; /* Responsive images */
+    max-width: 100%;
+    height: auto;
+}
+
+.controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+button {
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+footer {
+    background-color: #7BE0AD; /* Color de fondo primario */
+    color: #011627; /* Color del texto, oscuro para buen contraste */
+    text-align: center; /* Centrar el texto */
+    padding: 20px; /* Espaciado interno */
+    position: relative; /* Para que se posicione bien en la página */
+    bottom: 0; /* Asegura que el footer se quede en la parte inferior */
+    width: 100%; /* Asegura que el footer cubra todo el ancho */
+}
+
+footer p {
+    margin: 0; /* Elimina el margen por defecto */
+    font-size: 16px; /* Tamaño de fuente */
 }
