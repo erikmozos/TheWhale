@@ -28,6 +28,7 @@ i {
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center; /* Alinea verticalmente los elementos */
     padding: 10px;
     background-color: #F1F1F1; /* Cambiado a color sólido */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -37,7 +38,6 @@ header {
     top: 0;
     z-index: 1000; /* Asegura que el header se superponga a otros elementos */
 }
-
 
 main {
     margin-top: 80px;
@@ -51,8 +51,118 @@ header i {
     width: 40px;
 }
 
-nav.mobile-navbar {
-    display: none;
+/* Menú Móvil */
+.mobile-navbar {
+    display: block; /* Muestra el menú móvil */
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    left: 0;
+    top: 60px; /* Ajusta esto si es necesario */
+    border: 1px solid #ccc; /* Agrega un borde al menú móvil */
+    display: none; /* Oculta el menú por defecto */
+}
+
+.mobile-navbar ul {
+    list-style: none; /* Elimina los estilos por defecto de la lista */
+    padding: 0; /* Elimina el padding de la lista */
+}
+
+.mobile-navbar li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc; /* Línea separadora entre elementos */
+}
+
+.mobile-navbar a {
+    color: #7BE0AD;
+    text-decoration: none;
+}
+
+#menu-icon {
+    cursor: pointer;
+}
+
+/* Menú para dispositivos móviles */
+@media (max-width: 768px) {
+    /* Muestra el menú móvil al hacer clic */
+    .mobile-navbar.show {
+        display: block;
+    }
+}
+
+/* Menú de Escritorio */
+.navbar {
+    display: none; /* Oculta el menú de escritorio por defecto */
+}
+
+/* Estilos para pantallas más grandes */
+@media (min-width: 769px) {
+    header {
+        display: grid I !important;
+        grid-template-rows: 1fr; /* Una fila */
+        grid-template-columns: 599px 78px 1fr; /* Columna única para disposición flexible */
+        grid-template-areas: 
+            "logo" /* Barra de navegación */
+            "navbar"   /* Logo centrado */
+            "search"; /* Área de búsqueda, puede ser usada en el futuro */
+        
+        padding: 10px;
+        background-color: #F1F1F1;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        
+    }
+    
+    #menu-icon {
+        display: none; /* Oculta el icono del menú en pantallas grandes */
+    }
+    
+    /* Logo centrado */
+    .logo-img {
+        display: grid;
+        grid-area: "logo"; /* Asigna el área al logo */
+        justify-self: center; /* Centra el logo horizontalmente */
+        width: 65px; /* Ajusta el tamaño según sea necesario */
+    }
+    
+    /* Navegación de escritorio */
+    .navbar {
+        display: grid;
+        grid-area: "navbar"; /* Asigna el área a la barra de navegación */
+        width: 100%;
+        
+    }
+
+    .navbar ul{
+        display: flex;
+        justify-content: center;
+        list-style: none;
+    }
+
+    .navbar ul li{
+        padding: 20px;
+    }
+
+    .navbar ul li a{
+        text-decoration: none;
+        color:green;
+        padding: 5px;
+    }
+
+    .navbar ul li a:hover{
+        text-decoration: none;
+        color:green;
+        padding: 5px;
+    }
+    
+    .mobile-navbar {
+        display: none; /* Oculta el menú móvil en pantallas grandes */
+    }
+
+    .fa-magnifying-glass{
+        grid-area: "search";
+    }
 }
 
 .sketchfab-embed-wrapper {
@@ -66,7 +176,7 @@ nav.mobile-navbar {
     margin: 10px;
 }
 
-.contenidor-cards{
+ .contenidor-cards{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -123,34 +233,22 @@ nav.mobile-navbar {
 }
 
 
-/* Estilos del iframe */
-.sketchfab-embed-wrapper iframe {
-    width: 400px;
-    height: 350px;
-    text-align: center;
-}
-
-.card-back p{
-    font-size: 20px;
-}
-
 .image-slider {
     position: relative;
-    max-width: 100%;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
     overflow: hidden;
-    margin: 20px auto; /* Center the slider */
 }
 
 .slider {
     display: flex;
-    transition: transform 0.5s ease;
-    margin: 10px;
+    transition: transform 0.5s ease; /* Transición suave para el slider */
 }
 
 .slider img {
-    width: 100%; /* Responsive images */
-    max-width: 100%;
-    height: auto;
+    width: 100%; /* Asegura que las imágenes se ajusten al contenedor */
+    height: auto; /* Mantiene la proporción de las imágenes */
 }
 
 .controls {
@@ -164,29 +262,15 @@ nav.mobile-navbar {
 }
 
 button {
-    background: rgba(255, 255, 255, 0.7);
+    background-color: transparent;
     border: none;
-    padding: 10px;
+    font-size: 24px;
     cursor: pointer;
-    font-size: 20px;
-    border-radius: 5px;
-}
-
-button:hover {
-    background: rgba(255, 255, 255, 1);
+    color: #7BE0AD; /* Color de los botones */
 }
 
 footer {
-    background-color: #7BE0AD; /* Color de fondo primario */
-    color: #011627; /* Color del texto, oscuro para buen contraste */
-    text-align: center; /* Centrar el texto */
-    padding: 20px; /* Espaciado interno */
-    position: relative; /* Para que se posicione bien en la página */
-    bottom: 0; /* Asegura que el footer se quede en la parte inferior */
-    width: 100%; /* Asegura que el footer cubra todo el ancho */
-}
-
-footer p {
-    margin: 0; /* Elimina el margen por defecto */
-    font-size: 16px; /* Tamaño de fuente */
+    text-align: center;
+    padding: 20px;
+    background-color: #F1F1F1;
 }

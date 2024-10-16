@@ -35,3 +35,14 @@ nextButton.addEventListener('click', () => {
     currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0; // Loop to first image
     updateSlider();
 });
+
+//Menu 
+
+// script.js
+const menuIcon = document.getElementById('menu-icon');
+const mobileNavbar = document.querySelector('.mobile-navbar');
+
+menuIcon.addEventListener('click', () => {
+    mobileNavbar.classList.toggle('show');
+});
+
