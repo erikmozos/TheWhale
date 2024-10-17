@@ -5,7 +5,7 @@ const historiaDiv = document.querySelector('.historia');
 
 // Añade evento de click para girar
 procesDiv.addEventListener('click', () => {
-    procesDiv.classList.toggle('active'); // Añade o elimina la clase 'active'
+    procesDiv.classList.toggle('active'); 
 });
 
 historiaDiv.addEventListener('click', () => {
@@ -22,7 +22,7 @@ const nextButton = document.querySelector('.next');
 let currentIndex = 0;
 
 function updateSlider() {
-    const offset = -currentIndex * 100; // Move slider based on current index
+    const offset = -currentIndex * 100; 
     slider.style.transform = `translateX(${offset}%)`;
 }
 
@@ -38,7 +38,6 @@ nextButton.addEventListener('click', () => {
 
 //Menu 
 
-// script.js
 const menuIcon = document.getElementById('menu-icon');
 const mobileNavbar = document.querySelector('.mobile-navbar');
 

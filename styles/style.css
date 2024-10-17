@@ -9,39 +9,39 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif; /* Cambiado para usar Open Sans como fuente principal */
+    font-family: 'Open Sans', sans-serif;
     background-color: #F1F1F1;
 }
 
 h1 {
-    font-family: 'Lora', serif; /* Fuente Lora para H1 */
+    font-family: 'Lora', serif;
     font-weight: 700;
-    font-size: 40px; /* Tamaño H1 */
+    font-size: 40px;
     text-align: center;
     color: #595959;
 }
 
 h2 {
-    font-family: 'Lora', serif; /* Fuente Lora para H2 */
+    font-family: 'Lora', serif;
     font-weight: 700;
-    font-size: 33px; /* Tamaño H2 */
+    font-size: 33px;
 }
 
 h3 {
-    font-family: 'Lora', serif; /* Fuente Lora para H3 */
+    font-family: 'Lora', serif;
     font-weight: 700;
-    font-size: 26px; /* Tamaño H3 */
+    font-size: 26px;
 }
 
 h4 {
-    font-family: 'Lora', serif; /* Fuente Lora para H4 */
+    font-family: 'Lora', serif;
     font-weight: 700;
-    font-size: 22px; /* Tamaño H4 */
+    font-size: 22px;
 }
 
 p, .body-text {
-    font-family: 'Open Sans', sans-serif; /* Fuente Open Sans para el cuerpo */
-    font-size: 16px; /* Tamaño para texto del cuerpo */
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
     color: #595959;
 }
 
@@ -56,16 +56,17 @@ i {
 header {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Alinea verticalmente los elementos */
+    align-items: center;
     padding: 10px;
-    background-color: #F1F1F1; /* Cambiado a color sólido */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    background-color: #F1F1F1;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
     height: 80px;
     position: fixed;
     top: 0;
-    z-index: 1000; /* Asegura que el header se superponga a otros elementos */
+    z-index: 1000;
 }
+
+
 
 main {
     margin-top: 80px;
@@ -79,117 +80,118 @@ header i {
     width: 40px;
 }
 
-/* Menú Móvil */
 .mobile-navbar {
-    display: block; /* Muestra el menú móvil */
+    display: block;
     position: absolute;
     background-color: white;
     width: 100%;
     left: 0;
-    top: 60px; /* Ajusta esto si es necesario */
-    border: 1px solid #ccc; /* Agrega un borde al menú móvil */
-    display: none; /* Oculta el menú por defecto */
+    top: 60px;
+    border: 1px solid #ccc;
+    display: none;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); 
+
 }
 
 .mobile-navbar ul {
-    list-style: none; /* Elimina los estilos por defecto de la lista */
-    padding: 0; /* Elimina el padding de la lista */
+    list-style: none;
+    padding: 0;
 }
 
 .mobile-navbar li {
     padding: 10px;
-    border-bottom: 1px solid #ccc; /* Línea separadora entre elementos */
+    border-bottom: 1px solid #ccc;
+    
 }
 
 .mobile-navbar a {
-    color: #7BE0AD;
     text-decoration: none;
+        background: linear-gradient(90deg, #7BE0AD, #559D7E); /* Gradiente en el texto */
+        -webkit-background-clip: text; /* Para que el gradiente aplique al texto */
+        -webkit-text-fill-color: transparent; /* Hace el texto transparente para que solo se vea el gradiente */
+        padding: 5px;
+        font-weight: bold;
 }
 
 #menu-icon {
     cursor: pointer;
 }
 
-/* Menú para dispositivos móviles */
 @media (max-width: 768px) {
-    /* Muestra el menú móvil al hacer clic */
     .mobile-navbar.show {
         display: block;
     }
 }
 
-/* Menú de Escritorio */
 .navbar {
-    display: none; /* Oculta el menú de escritorio por defecto */
+    display: none;
 }
 
-/* Estilos para pantallas más grandes */
 @media (min-width: 769px) {
     header {
         display: grid I !important;
-        grid-template-rows: 1fr; /* Una fila */
-        grid-template-columns: 599px 78px 1fr; /* Columna única para disposición flexible */
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas: 
-            "logo" /* Barra de navegación */
-            "navbar"   /* Logo centrado */
-            "search"; /* Área de búsqueda, puede ser usada en el futuro */
-        
+            "logo"
+            "navbar"
+            "search";
         padding: 10px;
         background-color: #F1F1F1;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         position: fixed;
         top: 0;
-        
     }
     
     #menu-icon {
-        display: none; /* Oculta el icono del menú en pantallas grandes */
+        display: none;
     }
     
-    /* Logo centrado */
     .logo-img {
         display: grid;
-        grid-area: "logo"; /* Asigna el área al logo */
-        justify-self: center; /* Centra el logo horizontalmente */
-        width: 65px; /* Ajusta el tamaño según sea necesario */
+        grid-area: "logo";
+        justify-self: center;
+        width: 65px;
     }
     
-    /* Navegación de escritorio */
     .navbar {
         display: grid;
-        grid-area: "navbar"; /* Asigna el área a la barra de navegación */
+        grid-area: "navbar";
         width: 100%;
-        
     }
 
-    .navbar ul{
+    .navbar ul {
         display: flex;
         justify-content: center;
         list-style: none;
     }
 
-    .navbar ul li{
+    .navbar ul li {
         padding: 20px;
+        
     }
 
-    .navbar ul li a{
+    .navbar ul li a {
         text-decoration: none;
-        color: #7BE0AD;
+        background: linear-gradient(90deg, #7BE0AD, #559D7E);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
         padding: 5px;
         font-weight: bold;
     }
 
-    .navbar ul li a:hover{
-        text-decoration: none;
-        color: #7BE0AD;
-        padding: 5px;
+    .navbar ul li a:hover {
+        background: linear-gradient(90deg, #559D7E, #7BE0AD); 
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-decoration: underline; 
     }
     
     .mobile-navbar {
-        display: none; /* Oculta el menú móvil en pantallas grandes */
+        display: none;
     }
 
-    .fa-magnifying-glass{
+    .fa-magnifying-glass {
         grid-area: "search";
     }
 }
@@ -199,15 +201,15 @@ header i {
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width:1800px; /* Ajusta el tamaño máximo del contenedor */
+    max-width: 1800px;
     height: 0;
-    padding-bottom: 45%; /* Relación de aspecto más pequeña */
+    padding-bottom: 45%;
     position: relative;
     background-color: #F2F2F2;
     border-radius: 8px;
     border: 2px solid #2E3A45;
     box-shadow: 0 4px 12px rgba(46, 58, 69, 0.2);
-    margin: 20px auto; /* Centrará el contenedor */
+    margin: 20px auto;
 }
 
 .sketchfab-embed-wrapper iframe {
@@ -219,21 +221,20 @@ header i {
     border: none;
 }
 
-
- .contenidor-cards{
+.contenidor-cards {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 .card {
-    width: 450px;
-    height: 350px;
+    width: 500px;
+    height: 450px;
     margin: 50px;
     position: relative;
-    perspective: 1000px; /* Se puede mantener si quieres un efecto 3D */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra añadida */
-    transition: transform 0.3s ease; /* Transición suave al girar */
+    perspective: 1000px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
 .card-front,
@@ -241,46 +242,36 @@ header i {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* Ocultar la cara posterior cuando no se ve */
+    backface-visibility: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #7BE0AD;
     border-radius: 5px;
     padding: 1.2em;
-    transition: opacity 0.6s ease; /* Transición de desvanecimiento */
+    transition: opacity 0.6s ease;
 }
 
 .card-front {
-    background: linear-gradient(135deg, #7BE0AD, #F1F1F1); /* Soft gradient on the front */
+    background: linear-gradient(135deg, #7BE0AD, #F1F1F1);
     font-size: 20px;
     font-weight: 500;
 }
 
-
-
-
 .card-back {
-    background: linear-gradient(135deg, #F1F1F1, #7BE0AD); /* Darker gradient on the back */
+    background: linear-gradient(135deg, #F1F1F1, #7BE0AD);
     color: #ffffff;
     opacity: 0;
 }
 
-
 .card.active .card-front {
-    opacity: 0; /* Desvanece el frente cuando está activa */
+    opacity: 0;
 }
 
 .card.active .card-back {
-    opacity: 1; /* Muestra la parte posterior cuando está activa */
+    opacity: 1;
+    transform: rotateY(0deg);
 }
 
-.card.active .card-back {
-    transform: rotateY(0deg); /* Muestra la parte posterior cuando está activa */
-}
-
-
-/* Contenedor del slider con sombra verde */
 .slider-container {
     width: 100%;
     max-width: 620px;
@@ -288,20 +279,20 @@ header i {
     padding: 20px;
     border-radius: 10px;
     background-color: #F1F1F1;
-    box-shadow: 0 4px 15px #2E3A45; /* Sombra verde */
+    box-shadow: 0 4px 15px #2E3A45;
     overflow: hidden;
-    position: relative; /* Permite que los controles se posicionen en relación con el contenedor */
+    position: relative;
 }
 
 .controls {
     position: absolute;
-    top: 10px; /* Ajusta esto para mover las flechas más cerca o lejos del borde superior */
+    top: 10px;
     left: 0;
     right: 0;
     display: flex;
-    justify-content: space-between; /* Espacia las flechas a los lados */
-    padding: 0 20px; /* Espacio alrededor de las flechas */
-    z-index: 10; /* Asegura que las flechas estén por encima de las imágenes */
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 10;
 }
 
 button {
@@ -309,8 +300,7 @@ button {
     border: none;
     font-size: 24px;
     cursor: pointer;
-    color: #f1f1f1; /* Color de las flechas */
-
+    color: #f1f1f1;
 }
 
 .image-slider {
@@ -318,7 +308,7 @@ button {
     overflow: hidden;
     display: flex;
     justify-content: center;
-    height: 400px; /* Altura fija para el slider */
+    height: 400px;
 }
 
 .slider {
@@ -327,15 +317,12 @@ button {
 }
 
 .slider img {
-    width: 100%; /* Asegura que la imagen ocupe el 100% del contenedor */
-    height: 100%; /* Asegura que la imagen ocupe el 100% del contenedor */
-    object-fit: cover; /* Recorta las imágenes para llenar el contenedor */
-    padding: 10px; /* Espaciado alrededor de la imagen */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 10px;
 }
 
-
-
-/* Botones de navegación separados */
 .controls {
     position: absolute;
     top: 50%;
@@ -343,7 +330,7 @@ button {
     right: 0;
     display: flex;
     justify-content: space-between;
-    padding: 0 20px; /* Separación añadida */
+    padding: 0 20px;
     transform: translateY(-50%);
 }
 
@@ -355,7 +342,6 @@ button {
     color: #000000;
 }
 
-/* Estilos para el mensaje de redirigir */
 .redirect-library {
     text-align: center;
     margin-top: 20px;
@@ -370,21 +356,21 @@ button {
 }
 
 .redirect-library a:hover {
-    color: #559D7E; /* Un tono más oscuro al hacer hover */
+    color: #559D7E;
 }
 
 .redirect-library i {
     margin-right: 8px;
 }
 
-/* Footer */
 footer {
-    background: linear-gradient(90deg, #7BE0AD, #f1f1f1); /* Gradient from light green to dark blue */
+    background: linear-gradient(90deg, #7BE0AD, #f1f1f1);
     color: #FFFFFF;
     padding: 40px 20px;
     text-align: center;
-}
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Sombra más visible */
 
+}
 
 .footer-content p {
     margin: 10px 0;
@@ -402,6 +388,5 @@ footer {
 }
 
 .social-icons a:hover {
-    color: #011627; /* Color oscuro al hacer hover */
+    color: #011627;
 }
-
