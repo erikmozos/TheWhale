@@ -40,6 +40,10 @@
             <a href="../about.html">Al voltant de la balena</a>
           </li>
           <li>
+            <i class="fa-solid fa-water"></i>
+            <a href="../pages/portfolio.html">Muntatge</a>
+          </li>
+          <li>
             <i class="fa-solid fa-building-columns"></i>
             <a href="../history.html">Història</a>
           </li>
@@ -66,6 +70,10 @@
             <a href="../about.html">Al voltant de la balena</a>
           </li>
           <li>
+            <i class="fa-solid fa-water"></i>
+            <a href="../pages/portfolio.html">Muntatge</a>
+          </li>
+          <li>
             <i class="fa-solid fa-building-columns"></i>
             <a href="../history.html">Història</a>
           </li>
@@ -82,7 +90,15 @@
           </li>
         </ul>
       </nav>
-      <i class="fa-solid fa-magnifying-glass"></i>
+
+      <!-- Icono de búsqueda y campo de búsqueda oculto -->
+      <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Buscar..."
+        style="display: none"
+      />
     </header>
 
     <!-- Contenedor de inicio de sesión -->
@@ -131,6 +147,13 @@
       </div>
     </footer>
 
-    <script src="../js/script.js"></script>
+    <script>
+      const menuIcon = document.getElementById("menu-icon");
+      const mobileNavbar = document.querySelector(".mobile-navbar");
+
+      menuIcon.addEventListener("click", () => {
+        mobileNavbar.classList.toggle("show");
+      });
+    </script>
   </body>
 </html>

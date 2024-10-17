@@ -5,19 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/style.css" />
     <link rel="stylesheet" href="../styles/portfolio.css" />
-    <link
-      href="/assets/libreries/fontawesome-free-6.6.0-web/fontawesome-free-6.6.0-web/css/fontawesome.css"
-      rel="stylesheet"
-    />
-    <link
-      href="/assets/libreries/fontawesome-free-6.6.0-web/fontawesome-free-6.6.0-web/css/brands.css"
-      rel="stylesheet"
-    />
-    <link
-      href="/assets/libreries/fontawesome-free-6.6.0-web/fontawesome-free-6.6.0-web/css/solid.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles/portfolio.css" /> <!-- Estilo específico para el portfolio -->
+    <link href="/assets/libreries/fontawesome-free-6.6.0-web/fontawesome-free-6.6.0-web/css/fontawesome.css" rel="stylesheet" />
+    <link href="/assets/libreries/fontawesome-free-6.6.0-web/fontawesome-free-6.6.0-web/css/brands.css" rel="stylesheet" />
+    <link href="/assets/libreries/fontawesome-free-6.6.0-web/fontawesome-free-6.6.0-web/css/solid.css" rel="stylesheet" />
     <title>Portafolio</title>
 </head>
 
@@ -25,112 +15,84 @@
     <!-- Encabezado -->
     <header>
         <i id="menu-icon" class="fa-solid fa-bars"></i>
-        <img
-          class="logo-img"
-          src="../img/logo_aula_museu-removebg-preview.png"
-          alt="logo-whale"
-        />
+        <img class="logo-img" src="../img/logo_aula_museu-removebg-preview.png" alt="logo-whale" />
         <nav class="mobile-navbar">
             <ul>
                 <li><i class="fa-solid fa-house"></i> <a href="../index.html">Inici</a></li>
                 <li><i class="fa-solid fa-water"></i> <a href="../about.html">Al voltant de la balena</a></li>
+                <li><i class="fa-solid fa-water"></i> <a href="portfolio.html">Muntatge</a></li>
                 <li><i class="fa-solid fa-building-columns"></i> <a href="../history.html">Història</a></li>
                 <li><i class="fa-solid fa-screwdriver-wrench"></i><a href="../process.html">Procés</a></li>
                 <li><i class="fa-solid fa-newspaper"></i> <a href="../news.html">Notícies</a></li>
-                <li><i class="fa-solid fa-user"></i> <a href="logIn.html">Log In</a></li>
+                <li><i class="fa-solid fa-user"></i> <a href="/pages/logIn.html">Log In</a></li>
             </ul>
         </nav>
         <nav class="navbar">
             <ul>
                 <li><i class="fa-solid fa-house"></i> <a href="../index.html">Inici</a></li>
                 <li><i class="fa-solid fa-water"></i> <a href="../about.html">Al voltant de la balena</a></li>
+                <li><i class="fa-solid fa-water"></i> <a href="portfolio.html">Muntatge</a></li>
                 <li><i class="fa-solid fa-building-columns"></i> <a href="../history.html">Història</a></li>
                 <li><i class="fa-solid fa-screwdriver-wrench"></i><a href="../process.html">Procés</a></li>
                 <li><i class="fa-solid fa-newspaper"></i> <a href="../news.html">Notícies</a></li>
-                <li><i class="fa-solid fa-user"></i> <a href="logIn.html">Log In</a></li>
+                <li><i class="fa-solid fa-user"></i> <a href="/pages/logIn.html">Log In</a></li>
             </ul>
         </nav>
-        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <!-- Icono de búsqueda y campo de búsqueda oculto -->
+        <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
+        <input type="text" id="search-input" placeholder="Buscar..." style="display: none;">
     </header>
 
     <!-- Contenedor del Portafolio -->
     <main>
-        <h1 class="titol">El meu Portafoli</h1>
+        <h1 class="titol">Muntatge</h1>
         <div class="portfolio-container">
             <div class="portfolio-item">
                 <img src="../img/portfolioimages/53598249967_b89550d5c9.jpg" alt="Projecte 1" />
-                <div class="overlay">
-                    <p>Projecte 1</p>
-                </div>
             </div>
             <div class="portfolio-item">
                 <img src="../img/portfolioimages/53599125626_4c56306d9c_n.jpg" alt="Projecte 2" />
-                <div class="overlay">
-                    <p>Projecte 2</p>
-                </div>
             </div>
             <div class="portfolio-item">
                 <img src="../img/portfolioimages/53599453829_d4f427dd0b_n.jpg" alt="Projecte 3" />
-                <div class="overlay">
-                    <p>Projecte 3</p>
-                </div>
             </div>
             <div class="portfolio-item">
                 <img src="../img/portfolioimages/53599459739_5a1d77c4dc_n.jpg" alt="Projecte 6" />
-                <div class="overlay">
-                    <p>Projecte 6</p>
-                </div>
             </div>
             <div class="portfolio-item">
                 <img src="../img/portfolioimages/53649947737_daa3de1a03.jpg" alt="Projecte 7" />
-                <div class="overlay">
-                    <p>Projecte 7</p>
-                </div>
             </div>
             <div class="portfolio-item">
                 <img src="../img/portfolioimages/53649947747_61e4613e05.jpg" alt="Projecte 8" />
-                <div class="overlay">
-                    <p>Projecte 8</p>
-                </div>
             </div>
             <div class="portfolio-item">
                 <img src="../img/portfolioimages/53651038458_83dc7dac20_n.jpg" alt="Projecte 13" />
-                <div class="overlay">
-                    <p>Projecte 13</p>
-                </div>
-            </div>
             </div>
             <div class="portfolio-item">
                 <img src="../img/portfolioimages/53651038473_3923176d95.jpg" alt="Projecte 16" />
-                <div class="overlay">
-                    <p>Projecte 16</p>
-                </div>
             </div>
             <div class="portfolio-item">
                 <img src="../img/portfolioimages/53651169454_1048f9aae0_z.jpg" alt="Projecte 17" />
-                <div class="overlay">
-                    <p>Projecte 17</p>
-                </div>
             </div>
             <div class="portfolio-item">
                 <img src="../img/portfolioimages/53651169469_8d1f63d32c_z.jpg" alt="Projecte 18" />
-                <div class="overlay">
-                    <p>Projecte 18</p>
-                </div>
             </div>
             <div class="portfolio-item">
                 <img src="../img/portfolioimages/53651169479_07d6e7730e.jpg" alt="Projecte 19" />
-                <div class="overlay">
-                    <p>Projecte 19</p>
-                </div>
             </div>
             <div class="portfolio-item">
                 <img src="../img/portfolioimages/53651169484_289b1e3840.jpg" alt="Projecte 20" />
-                <div class="overlay">
-                    <p>Projecte 20</p>
-                </div>
             </div>
-            <!-- Aquí puedes seguir añadiendo más imágenes como las de arriba -->
+            <div class="portfolio-item">
+                <img src="../img/portfolioimages/53651169479_07d6e7730e.jpg" alt="Projecte 20" />
+            </div>
+            <div class="portfolio-item">
+                <img src="../img/portfolioimages/53650823576_3fbca32589_w.jpg" alt="Projecte 20" />
+            </div>
+            <div class="portfolio-item">
+                <img src="../img/portfolioimages/53703642939_9dc3494667.jpg" alt="Projecte 20" />
+            </div>
         </div>
     </main>
 
@@ -149,6 +111,27 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <!-- Scripts -->
+    <script>
+        // Toggle menu mobile
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileNavbar = document.querySelector('.mobile-navbar');
+        menuIcon.addEventListener('click', () => {
+            mobileNavbar.classList.toggle('show');
+        });
+
+        // Toggle search input on mobile
+        const searchIcon = document.getElementById('search-icon');
+        const searchInput = document.getElementById('search-input');
+        searchIcon.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                if (searchInput.style.display === "none" || searchInput.style.display === "") {
+                    searchInput.style.display = "block";
+                } else {
+                    searchInput.style.display = "none";
+                }
+            }
+        });
+    </script>
 </body>
 </html>

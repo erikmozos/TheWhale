@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
 
 * {
     margin: 0;
@@ -7,13 +9,39 @@
 }
 
 body {
-    font-family: 'Lora', serif;
+    font-family: 'Open Sans', sans-serif; /* Cambiado para usar Open Sans como fuente principal */
     background-color: #F1F1F1;
 }
 
 h1 {
+    font-family: 'Lora', serif; /* Fuente Lora para H1 */
     font-weight: 700;
+    font-size: 40px; /* Tamaño H1 */
     text-align: center;
+    color: #595959;
+}
+
+h2 {
+    font-family: 'Lora', serif; /* Fuente Lora para H2 */
+    font-weight: 700;
+    font-size: 33px; /* Tamaño H2 */
+}
+
+h3 {
+    font-family: 'Lora', serif; /* Fuente Lora para H3 */
+    font-weight: 700;
+    font-size: 26px; /* Tamaño H3 */
+}
+
+h4 {
+    font-family: 'Lora', serif; /* Fuente Lora para H4 */
+    font-weight: 700;
+    font-size: 22px; /* Tamaño H4 */
+}
+
+p, .body-text {
+    font-family: 'Open Sans', sans-serif; /* Fuente Open Sans para el cuerpo */
+    font-size: 16px; /* Tamaño para texto del cuerpo */
     color: #595959;
 }
 

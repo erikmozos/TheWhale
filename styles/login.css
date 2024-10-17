@@ -1,60 +1,68 @@
+/* General */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0; /* Cambia según tu paleta de colores */
+    font-family: 'Open Sans', sans-serif; /* Cambia a Open Sans */
+    background-color: #F1F1F1; /* Color de fondo */
     margin: 0;
 }
 
-main{
-    min-height: 67.3vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+main {
+    min-height: 67.3vh; /* Altura mínima del contenedor principal */
+    display: flex; /* Usar Flexbox para centrar contenido */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
 }
 
-
+/* Contenedor de Login */
 .login-container {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    margin: 50px auto; /* Centra verticalmente en la pantalla */
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 30px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    width: 300px; /* Ancho fijo */
+    margin: 50px auto; /* Centrado vertical y horizontal */
 }
 
-h2 {
-    text-align: center;
-    color: #333;
+/* Título del contenedor */
+.login-container h2 {
+    font-family: 'Lora', serif; /* Fuente Lora para el título */
+    text-align: center; /* Centra el texto */
+    color: #595959; /* Color del título */
 }
 
+/* Grupos de entrada */
 .input-group {
-    margin-bottom: 15px;
+    margin-bottom: 15px; /* Espaciado inferior */
 }
 
+/* Etiquetas */
 label {
-    display: block;
-    margin-bottom: 5px;
-    color: #555;
+    display: block; /* Mostrar como bloque */
+    margin-bottom: 5px; /* Espaciado inferior */
+    color: #555; /* Color de la etiqueta */
 }
 
+/* Entradas de texto y contraseña */
 input[type="text"],
 input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde */
+    border-radius: 4px; /* Bordes redondeados */
 }
 
+/* Botones */
 button {
-    width: 100%;
-    padding: 10px;
-    background-color: #28a745; /* Cambia según tu paleta de colores */
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    background-color: #28a745; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    font-size: 16px; /* Tamaño de la fuente */
 }
 
+/* Efecto hover en el botón */
 button:hover {
-    background-color: #218838; /* Color más oscuro al pasar el mouse */
+    background-color: #218838; /* Color más oscuro al pasar el ratón */
 }

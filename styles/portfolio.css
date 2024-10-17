@@ -1,91 +1,82 @@
-/* Estilo general */
+/* General */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Open Sans', sans-serif; /* Cambia a Open Sans */
+    background-color: #F1F1F1; /* Color de fondo */
     margin: 0;
     padding: 0;
 }
 
 main {
-    padding: 40px 20px;
-    text-align: center;
+    padding: 40px 20px; /* Espaciado interno */
+    text-align: center; /* Centra el texto */
 }
 
 .titol {
-    font-size: 36px;
-    margin-bottom: 40px;
-    color: #333;
+    font-family: 'Lora', serif; /* Fuente Lora para el título */
+    font-size: 36px; /* Tamaño del título */
+    margin-bottom: 40px; /* Margen inferior */
+    color: #595959; /* Color del título */
 }
 
-/* Contenedor de imágenes con grid */
+/* Estilos para la galería */
 .portfolio-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Diseño flexible */
-    gap: 20px;
-    justify-items: center;
-    padding: 0 20px;
+    display: grid; /* Usar Grid para la galería */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Columnas adaptativas */
+    gap: 15px; /* Espaciado entre elementos */
+    padding: 20px; /* Espaciado interno */
 }
 
-/* Cada ítem del portafolio */
 .portfolio-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 15px; /* Bordes redondeados */
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* Posicionamiento relativo para el overlay */
+    background-color: #fff; /* Fondo blanco */
+    border: 1px solid #ddd; /* Borde gris */
+    overflow: hidden; /* Oculta el desbordamiento */
 }
 
 .portfolio-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Mantiene la relación de aspecto de las imágenes */
-    transition: transform 0.5s ease;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    display: block; /* Mostrar como bloque */
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin distorsionarse */
 }
 
-/* Hover sobre las imágenes */
+.portfolio-item .overlay {
+    position: absolute; /* Posición absoluta para superposición */
+    bottom: 0; /* Alinea al fondo */
+    left: 0; /* Alinea a la izquierda */
+    right: 0; /* Alinea a la derecha */
+    background: rgba(0, 0, 0, 0.7); /* Fondo negro translúcido */
+    color: white; /* Color del texto */
+    text-align: center; /* Centra el texto */
+    padding: 10px; /* Espaciado interno */
+    opacity: 0; /* Inicialmente invisible */
+    transition: opacity 0.3s ease; /* Transición suave */
+}
+
 .portfolio-item:hover {
-    transform: translateY(-10px); /* Efecto de levitación */
-    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2); /* Más sombra al hacer hover */
+    opacity: 1; /* Muestra el overlay al pasar el mouse */
 }
 
-.portfolio-item:hover img {
-    transform: scale(1.1); /* Zoom sobre la imagen */
-}
-
-/* Superposición de texto sobre la imagen */
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro transparente */
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.portfolio-item:hover .overlay {
-    opacity: 1; /* Muestra el overlay con texto al hacer hover */
-}
-
-.overlay p {
-    font-size: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin: 0;
-}
-
-
-
-/* Ajustes para dispositivos móviles */
+/* Estilo responsivo */
 @media (max-width: 768px) {
+    .titol {
+        font-size: 28px; /* Tamaño del título en pantallas pequeñas */
+    }
+
     .portfolio-container {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajuste para pantallas más pequeñas */
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Columnas adaptativas */
     }
 }
 
+@media (max-width: 480px) {
+    .portfolio-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Columnas aún más adaptativas */
+    }
+}
+
+/* Modo PC - 3 columnas */
+@media (min-width: 769px) {
+    .portfolio-container {
+        grid-template-columns: repeat(3, 1fr); /* Siempre 3 columnas en pantallas grandes */
+    }
+}

@@ -27,12 +27,12 @@ function updateSlider() {
 }
 
 prevButton.addEventListener('click', () => {
-    currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1; // Loop to last image
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1; 
     updateSlider();
 });
 
 nextButton.addEventListener('click', () => {
-    currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0; // Loop to first image
+    currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0; 
     updateSlider();
 });
 
