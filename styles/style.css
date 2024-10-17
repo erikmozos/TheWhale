@@ -146,13 +146,14 @@ header i {
 
     .navbar ul li a{
         text-decoration: none;
-        color:green;
+        color: #7BE0AD;
         padding: 5px;
+        font-weight: bold;
     }
 
     .navbar ul li a:hover{
         text-decoration: none;
-        color:green;
+        color: #7BE0AD;
         padding: 5px;
     }
     
@@ -169,12 +170,27 @@ header i {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 500px;
+    width: 100%;
+    max-width:1800px; /* Ajusta el tamaño máximo del contenedor */
+    height: 0;
+    padding-bottom: 45%; /* Relación de aspecto más pequeña */
+    position: relative;
     background-color: #F2F2F2;
-    border-radius: 2px;
-    border-color: #eaeeec;
-    margin: 10px;
+    border-radius: 8px;
+    border: 2px solid #2E3A45;
+    box-shadow: 0 4px 12px rgba(46, 58, 69, 0.2);
+    margin: 20px auto; /* Centrará el contenedor */
 }
+
+.sketchfab-embed-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
 
  .contenidor-cards{
     display: flex;
@@ -233,24 +249,62 @@ header i {
 }
 
 
+/* Contenedor del slider con sombra verde */
+.slider-container {
+    width: 100%;
+    max-width: 620px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #F1F1F1;
+    box-shadow: 0 4px 15px #2E3A45; /* Sombra verde */
+    overflow: hidden;
+    position: relative; /* Permite que los controles se posicionen en relación con el contenedor */
+}
+
+.controls {
+    position: absolute;
+    top: 10px; /* Ajusta esto para mover las flechas más cerca o lejos del borde superior */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between; /* Espacia las flechas a los lados */
+    padding: 0 20px; /* Espacio alrededor de las flechas */
+    z-index: 10; /* Asegura que las flechas estén por encima de las imágenes */
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #f1f1f1; /* Color de las flechas */
+
+}
+
 .image-slider {
     position: relative;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    height: 400px; /* Altura fija para el slider */
 }
 
 .slider {
     display: flex;
-    transition: transform 0.5s ease; /* Transición suave para el slider */
+    transition: transform 0.5s ease;
 }
 
 .slider img {
-    width: 100%; /* Asegura que las imágenes se ajusten al contenedor */
-    height: auto; /* Mantiene la proporción de las imágenes */
+    width: 100%; /* Asegura que la imagen ocupe el 100% del contenedor */
+    height: 100%; /* Asegura que la imagen ocupe el 100% del contenedor */
+    object-fit: cover; /* Recorta las imágenes para llenar el contenedor */
+    padding: 10px; /* Espaciado alrededor de la imagen */
 }
 
+
+
+/* Botones de navegación separados */
 .controls {
     position: absolute;
     top: 50%;
@@ -258,6 +312,7 @@ header i {
     right: 0;
     display: flex;
     justify-content: space-between;
+    padding: 0 20px; /* Separación añadida */
     transform: translateY(-50%);
 }
 
@@ -266,11 +321,55 @@ button {
     border: none;
     font-size: 24px;
     cursor: pointer;
-    color: #7BE0AD; /* Color de los botones */
+    color: #000000;
 }
 
-footer {
+/* Estilos para el mensaje de redirigir */
+.redirect-library {
     text-align: center;
-    padding: 20px;
-    background-color: #F1F1F1;
+    margin-top: 20px;
+    font-size: 18px;
+    margin-bottom: 20px;
 }
+
+.redirect-library a {
+    color: #7BE0AD;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.redirect-library a:hover {
+    color: #559D7E; /* Un tono más oscuro al hacer hover */
+}
+
+.redirect-library i {
+    margin-right: 8px;
+}
+
+/* Footer */
+footer {
+    background-color: #7BE0AD; /* Cambiado el color a verde */
+    color: #FFFFFF;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content p {
+    margin: 10px 0;
+}
+
+.social-icons {
+    margin: 20px 0;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    font-size: 24px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #011627; /* Color oscuro al hacer hover */
+}
+

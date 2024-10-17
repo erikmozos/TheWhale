@@ -1,0 +1,91 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.titol {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+/* Contenedor de imágenes con grid */
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Diseño flexible */
+    gap: 20px;
+    justify-items: center;
+    padding: 0 20px;
+}
+
+/* Cada ítem del portafolio */
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene la relación de aspecto de las imágenes */
+    transition: transform 0.5s ease;
+}
+
+/* Hover sobre las imágenes */
+.portfolio-item:hover {
+    transform: translateY(-10px); /* Efecto de levitación */
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2); /* Más sombra al hacer hover */
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1); /* Zoom sobre la imagen */
+}
+
+/* Superposición de texto sobre la imagen */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro transparente */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.portfolio-item:hover .overlay {
+    opacity: 1; /* Muestra el overlay con texto al hacer hover */
+}
+
+.overlay p {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+    .portfolio-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajuste para pantallas más pequeñas */
+    }
+}
+
