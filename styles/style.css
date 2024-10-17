@@ -252,17 +252,20 @@ header i {
 }
 
 .card-front {
-    background-color: rgba(0, 0, 0, 0); /* Fondo transparente */
-    color: #7BE0AD;
+    background: linear-gradient(135deg, #7BE0AD, #F1F1F1); /* Soft gradient on the front */
     font-size: 20px;
     font-weight: 500;
 }
 
+
+
+
 .card-back {
-    background-color: #7BE0AD; /* Fondo de la cara posterior */
-    color: #011627; /* Color del texto en la parte posterior */
-    opacity: 0; /* Inicialmente oculta (transparente) */
+    background: linear-gradient(135deg, #F1F1F1, #7BE0AD); /* Darker gradient on the back */
+    color: #ffffff;
+    opacity: 0;
 }
+
 
 .card.active .card-front {
     opacity: 0; /* Desvanece el frente cuando está activa */
@@ -376,11 +379,12 @@ button {
 
 /* Footer */
 footer {
-    background-color: #7BE0AD; /* Cambiado el color a verde */
+    background: linear-gradient(90deg, #7BE0AD, #f1f1f1); /* Gradient from light green to dark blue */
     color: #FFFFFF;
     padding: 40px 20px;
     text-align: center;
 }
+
 
 .footer-content p {
     margin: 10px 0;
