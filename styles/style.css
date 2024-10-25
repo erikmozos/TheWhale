@@ -257,6 +257,10 @@ header i {
     font-weight: 500;
 }
 
+.card.zoom{
+    transform: scale(1.05);
+}
+
 
 
 

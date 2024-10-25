@@ -46,3 +46,14 @@ menuIcon.addEventListener('click', () => {
     mobileNavbar.classList.toggle('show');
 });
 
+const cards = document.querySelectorAll('.card');
+
+// Inicia la animación de botar solo en dispositivos móviles
+window.onload = () => {
+    if (window.innerWidth < 768) { // Para dispositivos móviles
+        cards.forEach(card => {
+            card.classList.add('bounce');
+        });
+    }
+};
+
