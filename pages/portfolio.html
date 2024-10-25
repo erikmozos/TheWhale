@@ -10,7 +10,6 @@
 </head>
 
 <body>
-    <!-- Encabezado -->
     <header>
         <i id="menu-icon" class="fa-solid fa-bars"></i>
         <img class="logo-img" src="../img/logo_aula_museu-removebg-preview.png" alt="logo-whale" />
@@ -37,12 +36,10 @@
             </ul>
         </nav>
 
-        <!-- Icono de búsqueda y campo de búsqueda oculto -->
         <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
         <input type="text" id="search-input" placeholder="Buscar..." style="display: none;">
     </header>
 
-    <!-- Contenedor del Portafolio -->
     <main>
         <h1 class="titol">Muntatge</h1>
         <div class="portfolio-container">
@@ -94,7 +91,6 @@
         </div>
     </main>
 
-    <!-- Pie de página -->
     <footer>
         <div class="footer-content">
             <p>&copy; 2024 TheWale. All rights reserved to Erik Mozos.</p>
@@ -109,16 +105,13 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script>
-        // Toggle menu mobile
         const menuIcon = document.getElementById('menu-icon');
         const mobileNavbar = document.querySelector('.mobile-navbar');
         menuIcon.addEventListener('click', () => {
             mobileNavbar.classList.toggle('show');
         });
 
-        // Toggle search input on mobile
         const searchIcon = document.getElementById('search-icon');
         const searchInput = document.getElementById('search-input');
         searchIcon.addEventListener('click', () => {
