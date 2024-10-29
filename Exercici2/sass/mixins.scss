@@ -1,0 +1,37 @@
+// mixins.scss
+
+// Mixin para bordes redondeados
+@mixin border-radius($radius) {
+    border-radius: $radius;
+}
+
+// Mixin para sombra
+@mixin box-shadow($shadow) {
+    box-shadow: $shadow;
+}
+
+// Mixin para transición
+@mixin transition($property, $duration, $ease) {
+    transition: $property $duration $ease;
+}
+
+// Mixin para un gradiente de fondo
+@mixin gradient-background($start-color, $end-color) {
+    background: linear-gradient(90deg, $start-color, $end-color);
+}
+
+// Mixin para un botón
+@mixin button-style($bg-color, $text-color) {
+    background-color: $bg-color;
+    color: $text-color;
+    border: none;
+    padding: $padding-base;
+    text-align: center;
+    cursor: pointer;
+    @include border-radius($border-radius);
+    @include box-shadow($box-shadow);
+    
+    &:hover {
+        opacity: 0.9; // Cambia la opacidad en hover
+    }
+}

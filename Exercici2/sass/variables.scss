@@ -1,37 +1,29 @@
-// Tipografías
-$font-family-main: 'Open Sans', sans-serif;
-$font-family-header: 'Lora', serif;
-$font-weight-normal: 400;
-$font-weight-bold: 700;
+// variables.scss
 
 // Colores
-$background-color: #F1F1F1; // Color de fondo
-$text-color: #595959; // Color del texto
-$label-color: #555; // Color de las etiquetas
-$border-color: #ddd; // Color de los bordes
-$overlay-background: rgba(0, 0, 0, 0.7); // Fondo de las superposiciones
-$button-color: #28a745; // Color del botón
-$button-hover-color: #218838; // Color del botón al pasar el ratón
-$footer-background: linear-gradient(90deg, #7BE0AD, #F1F1F1); // Fondo del pie de página
-$footer-text-color: #FFFFFF; // Color del texto del pie de página
-$social-icon-color: #FFFFFF; // Color de los iconos sociales
-$social-icon-hover-color: #011627; // Color de los iconos sociales al pasar el ratón
+$color-white: #ffffff;
+$color-light: #F1F1F1;
+$color-dark: #595959;
+$color-success: #28a745;
+$color-success-hover: #218838;
+$color-gradient-start: #7BE0AD;
+$color-gradient-end: #559D7E;
+$color-black: #000000;
+$color-grey: #555;
 
-// Espaciado
-$container-padding: 20px; // Relleno del contenedor
-$login-container-padding: 30px; // Relleno del contenedor de inicio de sesión
-$margin-large: 50px; // Margen grande
-$margin-medium: 20px; // Margen medio
-
-// Sombras
-$box-shadow-light: 0 4px 10px rgba(0, 0, 0, 0.1); // Sombra ligera
-$box-shadow-medium: 0 6px 15px rgba(0, 0, 0, 0.3); // Sombra media
-$box-shadow-heavy: 0 4px 20px rgba(0, 0, 0, 0.2); // Sombra pesada
+// Tipografía
+$font-family-main: 'Open Sans', sans-serif;
+$font-family-heading: 'Lora', serif;
 
 // Tamaños
-$button-radius: 4px; // Radio de los botones
-$card-width: 500px; // Ancho de la tarjeta
-$card-height: 450px; // Altura de la tarjeta
+$padding-small: 10px;
+$padding-base: 20px;
+$padding-large: 30px;
+$padding-xl: 40px;
 
-// Otros
-$input-border-radius: 4px; // Radio de los bordes de los inputs
+// Bordes
+$border-radius: 8px;
+
+// Sombras
+$box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+$box-shadow-heavy: 0 6px 15px rgba(0, 0, 0, 0.3);

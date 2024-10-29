@@ -1,0 +1,60 @@
+// header.scss
+
+@import 'variables';
+@import 'mixins';
+
+header {
+    display: grid !important;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "logo"
+        "navbar"
+        "search";
+    padding: $padding-base;
+    background-color: $color-light;
+    @include box-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+    position: fixed;
+    top: 0;
+
+    #menu-icon {
+        display: none;
+    }
+
+    .logo-img {
+        display: grid;
+        grid-area: "logo";
+        justify-self: center;
+        width: 65px;
+    }
+
+    .navbar {
+        display: grid;
+        grid-area: "navbar";
+        width: 100%;
+
+        ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+
+            li {
+                padding: $padding-base;
+                
+                a {
+                    text-decoration: none;
+                    @include gradient-background($color-gradient-start, $color-gradient-end);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    padding: 5px;
+                    font-weight: bold;
+
+                    &:hover {
+                        @include gradient-background($color-gradient-end, $color-gradient-start);
+                        text-decoration: underline; 
+                    }
+                }
+            }
+        }
+    }
+}
