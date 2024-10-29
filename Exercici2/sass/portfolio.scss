@@ -1,0 +1,77 @@
+// Variables
+$font-family-main: 'Open Sans', sans-serif;
+$font-family-header: 'Lora', serif;
+$background-color: #F1F1F1;
+$text-color: #595959;
+$input-border-color: #ccc;
+$button-color: #28a745;
+$button-hover-color: #218838;
+$box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+$container-width: 300px;
+
+// Mixin for buttons
+@mixin button-style($bg-color, $hover-color) {
+    width: 100%;
+    padding: 10px;
+    background-color: $bg-color;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+
+    &:hover {
+        background-color: $hover-color;
+    }
+}
+
+// Styles
+body {
+    font-family: $font-family-main;
+    background-color: $background-color;
+    margin: 0;
+}
+
+main {
+    min-height: 67.3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: $box-shadow;
+    width: $container-width;
+    margin: 50px auto;
+
+    h2 {
+        font-family: $font-family-header;
+        text-align: center;
+        color: $text-color;
+    }
+
+    .input-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        color: #555;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid $input-border-color;
+        border-radius: 4px;
+    }
+
+    button {
+        @include button-style($button-color, $button-hover-color);
+    }
+}
