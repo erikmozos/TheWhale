@@ -1,69 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
 @import 'variables';
-@import 'mixins';
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: $font-family-open-sans;
-    background-color: $background-color;
-}
-
-h1 {
-    font-family: $font-family-lora;
-    font-weight: 700;
-    font-size: $font-size-h1;
-    text-align: center;
-    color: $text-color;
-}
-
-h2 {
-    font-family: $font-family-lora;
-    font-weight: 700;
-    font-size: $font-size-h2;
-}
-
-h3 {
-    font-family: $font-family-lora;
-    font-weight: 700;
-    font-size: $font-size-h3;
-}
-
-h4 {
-    font-family: $font-family-lora;
-    font-weight: 700;
-    font-size: $font-size-h4;
-}
-
-p, .body-text {
-    font-family: $font-family-open-sans;
-    font-size: $font-size-p;
-    color: $text-color;
-}
-
-.titol {
-    width: 100%;
-}
-
-i {
-    color: $color-black;
-}
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: $spacing-small;
-    background-color: $header-background-color;
-    @include box-shadow($header-box-shadow);
+    padding: 10px;
+    background-color: $background-color;
+    box-shadow: 0 6px 15px $box-shadow-color;
     width: 100%;
-    height: 80px;
+    height: $header-height;
     position: fixed;
     top: 0;
     z-index: 1000;
@@ -74,19 +19,19 @@ header i {
 }
 
 .logo-img {
-    width: 40px;
+    width: 50px;
 }
 
 .mobile-navbar {
     display: block;
     position: absolute;
-    background-color: $color-white;
+    background-color: $white-color;
     width: 100%;
     left: 0;
     top: 60px;
-    border: 1px solid $color-grey;
+    border: 1px solid $border-color;
     display: none;
-    @include box-shadow($box-shadow-heavy);
+    box-shadow: 0 6px 15px $box-shadow-color;
 }
 
 .mobile-navbar ul {
@@ -95,13 +40,13 @@ header i {
 }
 
 .mobile-navbar li {
-    padding: $spacing-small;
-    border-bottom: 1px solid $color-grey;
+    padding: 10px;
+    border-bottom: 1px solid $border-color;
 }
 
 .mobile-navbar a {
     text-decoration: none;
-    background: linear-gradient(90deg, $color-gradient-start, $color-gradient-end);
+    background: linear-gradient(90deg, $primary-color, $secondary-color);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     padding: 5px;
@@ -126,14 +71,11 @@ header i {
     header {
         display: grid !important;
         grid-template-rows: 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-areas: 
-            "logo"
-            "navbar"
-            "search";
+        grid-template-columns: 1fr 10fr 1fr;
+        grid-template-areas: "logo navbar search";
         padding: 10px;
-        background-color: $header-background-color;
-        @include box-shadow($box-shadow);
+        background-color: $background-color;
+        box-shadow: 0 4px 8px $box-shadow-light-color;
         position: fixed;
         top: 0;
     }
@@ -167,7 +109,7 @@ header i {
 
     .navbar ul li a {
         text-decoration: none;
-        background: linear-gradient(90deg, $color-gradient-start, $color-gradient-end);
+        background: linear-gradient(90deg, $primary-color, $secondary-color);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         padding: 5px;
@@ -175,7 +117,7 @@ header i {
     }
 
     .navbar ul li a:hover {
-        background: linear-gradient(90deg, $color-gradient-end, $color-gradient-start);
+        background: linear-gradient(90deg, $secondary-color, $primary-color);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         text-decoration: underline;

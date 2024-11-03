@@ -1,0 +1,66 @@
+@import 'commons';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    @include text-style($font-family-open-sans, $font-size-p, $text-color);
+    background-color: $background-color;
+    margin: 0;
+    padding: 0;
+
+    main {
+        min-height: 66vh;
+        margin-top: $header-height;
+        padding: 20px;
+
+        section {
+            margin-bottom: 40px;
+            text-align: center;
+
+            h2 {
+                @include text-style($font-family-lora, $font-size-h3, $text-color);
+                margin-bottom: 10px;
+            }
+
+            img {
+                max-width: 30%;
+                height: auto;
+                @include border-radius(8px);
+                @include box-shadow($box-shadow-light-color, 10px);
+                margin-bottom: 10px;
+            }
+
+            p {
+                @include text-style($font-family-open-sans, $font-size-p, $text-color);
+            }
+        }
+    }
+}
+
+.button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: $primary-color;
+    color: $white-color;
+    border: none;
+    @include border-radius(4px);
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    @include transition(background-color, 0.3s);
+
+    a {
+        color: $white-color;
+        text-decoration: none;
+    }
+
+    &:hover {
+        background-color: $secondary-color;
+    }
+}

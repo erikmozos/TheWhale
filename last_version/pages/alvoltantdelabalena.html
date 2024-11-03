@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../sass2/alvoltantdelabalena.css">
+    <link rel="stylesheet" href="../assets/libreries/fontawesome-free-6.6.0-web/fontawesome-free-6.6.0-web/css/all.min.css">
+    <title>Al Voltant de la Balena</title>
+</head>
+<body>
+
+    <!-- Import header -->
+    <header>
+        <i id="menu-icon" class="fa-solid fa-bars"></i>
+        <img class="logo-img" src="../img/logo_aula_museu-removebg-preview.png" alt="logo-whale" />
+        <nav class="mobile-navbar">
+            <ul>
+                <li><i class="fa-solid fa-house"></i> <a href="../index.html">Inici</a></li>
+                <li><i class="fa-solid fa-water"></i> <a href="../pages/alvoltantdelabalena.html">Al voltant de la balena</a></li>
+                <li><i class="fa-solid fa-puzzle-piece"></i> <a href="../pages/portfolio.html">Muntatge</a></li>
+                <li><i class="fa-solid fa-building-columns"></i> <a href="#">Història</a></li>
+                <li><i class="fa-solid fa-screwdriver-wrench"></i><a href="#">Procés</a></li>
+                <li><i class="fa-solid fa-newspaper"></i> <a href="#">Notícies</a></li>
+                <li><i class="fa-solid fa-user"></i> <a href="../pages/logIn.html">Log In</a></li>
+            </ul>
+        </nav>
+        <nav class="navbar">
+            <ul>
+                <li><i class="fa-solid fa-house"></i> <a href="../index.html">Inici</a></li>
+                <li><i class="fa-solid fa-water"></i> <a href="../pages/alvoltantdelabalena.html">Al voltant de la balena</a></li>
+                <li><i class="fa-solid fa-puzzle-piece"></i> <a href="../pages/portfolio.html">Muntatge</a></li>
+                <li><i class="fa-solid fa-building-columns"></i> <a href="#">Història</a></li>
+                <li><i class="fa-solid fa-screwdriver-wrench"></i><a href="#">Procés</a></li>
+                <li><i class="fa-solid fa-newspaper"></i> <a href="#">Notícies</a></li>
+                <li><i class="fa-solid fa-user"></i> <a href="../pages/logIn.html">Log In</a></li>
+            </ul>
+        </nav>
+        <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
+        <input type="text" id="search-input" placeholder="Buscar..." style="display: none;">
+    </header>
+
+    <main>
+      <div class="contenidor-cards">
+          <a href="../pages/elsossos.html" class="card-link">
+              <div class="ossos card">
+                  <h3>Els Ossos</h3>
+              </div>
+          </a>
+          <a href="../pages/altresactivitats.html" class="card-link">
+              <div class="fitxes card">
+                  <h3>Fitxes</h3>
+              </div>
+          </a>
+      </div>
+  </main>
+
+    <!-- Import footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 TheWale. All rights reserved to Erik Mozos.</p>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <p>Contacte: emozosm20214@iesjoanramis.org</p>
+            <p>Visitan's a la nostra pàgina web del institut www.iesjoanramis.org.</p>
+        </div>
+    </footer>
+
+    <script>
+      const menuIcon = document.getElementById("menu-icon");
+      const mobileNavbar = document.querySelector(".mobile-navbar");
+
+      menuIcon.addEventListener("click", () => {
+        mobileNavbar.classList.toggle("show");
+      });
+    </script>
+
+</body>
+</html>

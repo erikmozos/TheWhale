@@ -1,0 +1,26 @@
+footer {
+  background: linear-gradient(90deg, #7BE0AD, #F1F1F1);
+  color: #595959;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.footer-content p {
+  margin: 10px 0;
+}
+
+.social-icons {
+  margin: 20px 0;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  font-size: 24px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #000000;
+}/*# sourceMappingURL=footer.css.map */
