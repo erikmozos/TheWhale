@@ -1,6 +1,171 @@
-// main.scss
+@import 'variables';
+@import 'mixins';
+@import 'header.scss';
+@import 'footer.scss';
 
-@import 'header';
-@import 'login';
-@import 'portfolio';
-@import 'footer';
+.sketchfab-embed-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1800px;
+    height: 0;
+    padding-bottom: 45%;
+    position: relative;
+    background-color: $background-color-light;
+    border-radius: 8px;
+    border: 2px solid $border-color-dark;
+    @include box-shadow(0 4px 12px rgba($shadow-color, 0.2));
+    margin: 20px auto;
+}
+
+.sketchfab-embed-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.contenidor-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 500px;
+    height: 450px;
+    margin: 50px;
+    position: relative;
+    perspective: 1000px;
+    @include box-shadow(0 4px 20px rgba($shadow-color, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 1.2em;
+    transition: opacity 0.6s ease;
+}
+
+.card-front {
+    background: linear-gradient(135deg, $card-front-gradient-start, $card-front-gradient-end);
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.card-back {
+    background: linear-gradient(135deg, $card-back-gradient-start, $card-back-gradient-end);
+    color: $white;
+    opacity: 0;
+}
+
+.card.active .card-front {
+    opacity: 0;
+}
+
+.card.active .card-back {
+    opacity: 1;
+    transform: rotateY(0deg);
+}
+
+.slider-container {
+    width: 100%;
+    max-width: 620px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: $background-color-light;
+    @include box-shadow(0 4px 15px $shadow-color);
+    overflow: hidden;
+    position: relative;
+}
+
+.controls {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 10;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: $button-color;
+}
+
+.image-slider {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    height: 400px;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 10px;
+}
+
+.controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    transform: translateY(-50%);
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: $button-color-dark;
+}
+
+.redirect-library {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.redirect-library a {
+    color: $link-color;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.redirect-library a:hover {
+    color: $link-hover-color;
+}
+
+.redirect-library i {
+    margin-right: 8px;
+}

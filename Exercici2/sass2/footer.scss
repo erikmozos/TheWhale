@@ -1,0 +1,29 @@
+// footer.scss
+@import 'variables';
+
+footer {
+    background: linear-gradient(90deg, $primary-color, $background-color);
+    color: $white-color;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 6px 15px $box-shadow-color;
+}
+
+.footer-content p {
+    margin: 10px 0;
+}
+
+.social-icons {
+    margin: 20px 0;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    font-size: 24px;
+    color: $white-color;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: $black-color;
+}

@@ -1,60 +1,191 @@
-// header.scss
-
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
 @import 'variables';
 @import 'mixins';
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family-open-sans;
+    background-color: $background-color;
+}
+
+h1 {
+    font-family: $font-family-lora;
+    font-weight: 700;
+    font-size: $font-size-h1;
+    text-align: center;
+    color: $text-color;
+}
+
+h2 {
+    font-family: $font-family-lora;
+    font-weight: 700;
+    font-size: $font-size-h2;
+}
+
+h3 {
+    font-family: $font-family-lora;
+    font-weight: 700;
+    font-size: $font-size-h3;
+}
+
+h4 {
+    font-family: $font-family-lora;
+    font-weight: 700;
+    font-size: $font-size-h4;
+}
+
+p, .body-text {
+    font-family: $font-family-open-sans;
+    font-size: $font-size-p;
+    color: $text-color;
+}
+
+.titol {
+    width: 100%;
+}
+
+i {
+    color: $color-black;
+}
+
 header {
-    display: grid !important;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: 
-        "logo"
-        "navbar"
-        "search";
-    padding: $padding-base;
-    background-color: $color-light;
-    @include box-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-small;
+    background-color: $header-background-color;
+    @include box-shadow($header-box-shadow);
+    width: 100%;
+    height: 80px;
     position: fixed;
     top: 0;
+    z-index: 1000;
+}
 
+header i {
+    padding-top: 15px;
+}
+
+.logo-img {
+    width: 40px;
+}
+
+.mobile-navbar {
+    display: block;
+    position: absolute;
+    background-color: $color-white;
+    width: 100%;
+    left: 0;
+    top: 60px;
+    border: 1px solid $color-grey;
+    display: none;
+    @include box-shadow($box-shadow-heavy);
+}
+
+.mobile-navbar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.mobile-navbar li {
+    padding: $spacing-small;
+    border-bottom: 1px solid $color-grey;
+}
+
+.mobile-navbar a {
+    text-decoration: none;
+    background: linear-gradient(90deg, $color-gradient-start, $color-gradient-end);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 5px;
+    font-weight: bold;
+}
+
+#menu-icon {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .mobile-navbar.show {
+        display: block;
+    }
+}
+
+.navbar {
+    display: none;
+}
+
+@media (min-width: 769px) {
+    header {
+        display: grid !important;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+            "logo"
+            "navbar"
+            "search";
+        padding: $spacing-small;
+        background-color: $header-background-color;
+        @include box-shadow($box-shadow);
+        position: fixed;
+        top: 0;
+    }
+    
     #menu-icon {
         display: none;
     }
-
+    
     .logo-img {
         display: grid;
         grid-area: "logo";
         justify-self: center;
         width: 65px;
     }
-
+    
     .navbar {
         display: grid;
         grid-area: "navbar";
         width: 100%;
+    }
 
-        ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
+    .navbar ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+    }
 
-            li {
-                padding: $padding-base;
-                
-                a {
-                    text-decoration: none;
-                    @include gradient-background($color-gradient-start, $color-gradient-end);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    padding: 5px;
-                    font-weight: bold;
+    .navbar ul li {
+        padding: $spacing-base;
+    }
 
-                    &:hover {
-                        @include gradient-background($color-gradient-end, $color-gradient-start);
-                        text-decoration: underline; 
-                    }
-                }
-            }
-        }
+    .navbar ul li a {
+        text-decoration: none;
+        background: linear-gradient(90deg, $color-gradient-start, $color-gradient-end);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding: 5px;
+        font-weight: bold;
+    }
+
+    .navbar ul li a:hover {
+        background: linear-gradient(90deg, $color-gradient-end, $color-gradient-start);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-decoration: underline;
+    }
+    
+    .mobile-navbar {
+        display: none;
+    }
+
+    .fa-magnifying-glass {
+        grid-area: "search";
     }
 }

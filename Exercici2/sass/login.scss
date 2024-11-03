@@ -1,10 +1,16 @@
-// login.scss
-
 @import 'variables';
 @import 'mixins';
+@import 'header';
+@import 'footer';
+
+body {
+    font-family: $font-family-open-sans;
+    background-color: $background-color;
+    margin: 0;
+}
 
 main {
-    min-height: 67.3vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,43 +18,50 @@ main {
 
 .login-container {
     background-color: $color-white;
-    padding: $padding-large;
-    @include border-radius($border-radius);
+    padding: $spacing-large;
+    border-radius: $border-radius;
     @include box-shadow($box-shadow);
     width: 300px;
     margin: 50px auto;
+}
 
-    h2 {
-        font-family: $font-family-heading;
-        text-align: center;
-        color: $color-dark;
-    }
+.login-container h2 {
+    font-family: $font-family-lora;
+    text-align: center;
+    color: $color-dark;
+}
 
-    .input-group {
-        margin-bottom: 15px;
+.input-group {
+    margin-bottom: $spacing-small;
+}
 
-        label {
-            display: block;
-            margin-bottom: 5px;
-            color: $color-grey;
-        }
+label {
+    display: block;
+    margin-bottom: $spacing-small;
+    color: $color-text;
+}
 
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            @include border-radius(4px);
-        }
-    }
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: $spacing-small;
+    border: 1px solid $color-grey;
+    border-radius: 4px;
+}
 
-    button {
-        width: 100%;
-        padding: 10px;
-        @include button-style($color-success, $color-white);
+button {
+    width: 100%;
+    padding: $spacing-small;
+    background-color: $color-gradient-start;
+    color: $color-white;
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+    font-size: $font-size-p;
+    font-weight: bold;
+    @include transition(all, 0.3s, ease);
 
-        &:hover {
-            @include button-style($color-success-hover, $color-white);
-        }
+    &:hover {
+        background-color: $color-gradient-end;
     }
 }

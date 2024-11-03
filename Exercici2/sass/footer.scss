@@ -1,26 +1,28 @@
-// footer.scss
-
 @import 'variables';
 @import 'mixins';
 
 footer {
-    @include gradient-background($color-gradient-start, $color-light);
-    color: $color-white;
-    padding: $padding-xl 20px;
+    background: linear-gradient(90deg, $footer-background-gradient-start, $footer-background-gradient-end);
+    color: $footer-text-color;
+    padding: $spacing-xl $spacing-base;
     text-align: center;
-    @include box-shadow($box-shadow-heavy);
+    @include box-shadow($footer-box-shadow);
 
-    .social-icons {
-        margin: 20px 0;
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-        a {
-            margin: 0 10px;
-            font-size: 24px;
-            color: $color-white;
-            text-decoration: none;
+        .social-icons {
+            margin: $spacing-small 0;
 
-            &:hover {
-                color: $color-black;
+            a {
+                color: $footer-text-color;
+                margin: 0 $spacing-small;
+
+                &:hover {
+                    color: $color-black;
+                }
             }
         }
     }

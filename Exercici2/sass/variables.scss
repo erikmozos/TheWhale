@@ -1,29 +1,43 @@
-// variables.scss
+$font-family-lora: 'Lora', serif;
+$font-family-open-sans: 'Open Sans', sans-serif;
+$font-family-montserrat: 'Montserrat', sans-serif;
 
-// Colores
+// Colors
 $color-white: #ffffff;
 $color-light: #F1F1F1;
 $color-dark: #595959;
-$color-success: #28a745;
-$color-success-hover: #218838;
+$color-black: #000000;
+$color-grey: #ccc;
 $color-gradient-start: #7BE0AD;
 $color-gradient-end: #559D7E;
-$color-black: #000000;
-$color-grey: #555;
+$color-text: #595959;
+$color-border: #2E3A45;
+$background-color: #f1f1f1;
+$footer-background-gradient-start: #7BE0AD;
+$footer-background-gradient-end: #559D7E;
+$text-color: #595959;
+$header-background-color: #F1F1F1;
+$footer-text-color: #FFFFFF;
+$header-text-color: #000000;
 
-// Tipografía
-$font-family-main: 'Open Sans', sans-serif;
-$font-family-heading: 'Lora', serif;
+// Font Sizes
+$font-size-h1: 40px;
+$font-size-h2: 33px;
+$font-size-h3: 26px;
+$font-size-h4: 22px;
+$font-size-p: 16px;
 
-// Tamaños
-$padding-small: 10px;
-$padding-base: 20px;
-$padding-large: 30px;
-$padding-xl: 40px;
+// Spacing
+$spacing-small: 10px;
+$spacing-base: 20px;
+$spacing-large: 30px;
+$spacing-xl: 40px;
 
-// Bordes
-$border-radius: 8px;
-
-// Sombras
-$box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+// Shadows
+$box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 $box-shadow-heavy: 0 6px 15px rgba(0, 0, 0, 0.3);
+$header-box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); // Added header box shadow
+$footer-box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); // Added footer box shadow
+
+// Border Radius
+$border-radius: 8px;

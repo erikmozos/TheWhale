@@ -1,0 +1,22 @@
+footer {
+  background: linear-gradient(90deg, #7BE0AD, #559D7E);
+  color: #FFFFFF;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+footer .footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+footer .footer-content .social-icons {
+  margin: 10px 0;
+}
+footer .footer-content .social-icons a {
+  color: #FFFFFF;
+  margin: 0 10px;
+}
+footer .footer-content .social-icons a:hover {
+  color: #000000;
+}/*# sourceMappingURL=footer.css.map */
