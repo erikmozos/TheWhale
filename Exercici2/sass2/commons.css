@@ -20,7 +20,7 @@ header i {
 }
 
 .logo-img {
-  width: 40px;
+  width: 50px;
 }
 
 .mobile-navbar {
@@ -69,9 +69,9 @@ header i {
 
 @media (min-width: 769px) {
   header {
-    display: grid;
+    display: grid !important;
     grid-template-rows: 1fr;
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 1fr 10fr 1fr;
     grid-template-areas: "logo navbar search";
     padding: 10px;
     background-color: #F1F1F1;
@@ -124,7 +124,7 @@ header i {
 }
 footer {
   background: linear-gradient(90deg, #7BE0AD, #F1F1F1);
-  color: #FFFFFF;
+  color: #595959;
   padding: 40px 20px;
   text-align: center;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);

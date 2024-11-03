@@ -1,39 +1,44 @@
-// Example usage in elsossos.scss
 @import 'commons';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     @include text-style($font-family-open-sans, $font-size-p, $text-color);
     background-color: $background-color;
     margin: 0;
     padding: 0;
-}
 
-main {
-    min-height: 66vh;
-    margin-top: $header-height;
-    padding: 20px;
-}
+    main {
+        min-height: 66vh;
+        margin-top: $header-height;
+        padding: 20px;
 
-section {
-    margin-bottom: 40px;
-    text-align: center;
-}
+        section {
+            margin-bottom: 40px;
+            text-align: center;
 
-section h2 {
-    @include text-style($font-family-lora, $font-size-h3, $text-color);
-    margin-bottom: 10px;
-}
+            h2 {
+                @include text-style($font-family-lora, $font-size-h3, $text-color);
+                margin-bottom: 10px;
+            }
 
-section img {
-    max-width: 30%;
-    height: auto;
-    @include border-radius(8px);
-    @include box-shadow($box-shadow-light-color, 10px);
-    margin-bottom: 10px;
-}
+            img {
+                max-width: 30%;
+                height: auto;
+                @include border-radius(8px);
+                @include box-shadow($box-shadow-light-color, 10px);
+                margin-bottom: 10px;
+            }
 
-section p {
-    @include text-style($font-family-open-sans, $font-size-p, $text-color);
+            p {
+                @include text-style($font-family-open-sans, $font-size-p, $text-color);
+            }
+        }
+    }
 }
 
 .button {
@@ -49,13 +54,13 @@ section p {
     text-align: center;
     text-decoration: none;
     @include transition(background-color, 0.3s);
-}
 
-.button a {
-    color: $white-color;
-    text-decoration: none;
-}
+    a {
+        color: $white-color;
+        text-decoration: none;
+    }
 
-.button:hover {
-    background-color: $secondary-color;
+    &:hover {
+        background-color: $secondary-color;
+    }
 }

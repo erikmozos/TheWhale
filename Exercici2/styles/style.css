@@ -130,7 +130,7 @@ header i {
 
 @media (min-width: 769px) {
     header {
-        display: grid I !important;
+        display: grid !important;
         grid-template-rows: 1fr;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas: 

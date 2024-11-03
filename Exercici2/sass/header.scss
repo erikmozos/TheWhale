@@ -131,7 +131,7 @@ header i {
             "logo"
             "navbar"
             "search";
-        padding: $spacing-small;
+        padding: 10px;
         background-color: $header-background-color;
         @include box-shadow($box-shadow);
         position: fixed;
@@ -162,7 +162,7 @@ header i {
     }
 
     .navbar ul li {
-        padding: $spacing-base;
+        padding: 20px;
     }
 
     .navbar ul li a {

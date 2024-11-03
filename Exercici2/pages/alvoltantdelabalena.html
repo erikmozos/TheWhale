@@ -15,24 +15,24 @@
         <img class="logo-img" src="../img/logo_aula_museu-removebg-preview.png" alt="logo-whale" />
         <nav class="mobile-navbar">
             <ul>
-                <li><i class="fa-solid fa-house"></i> <a href="#">Inici</a></li>
-                <li><i class="fa-solid fa-water"></i> <a href="#">Al voltant de la balena</a></li>
-                <li><i class="fa-solid fa-puzzle-piece"></i> <a href="./pages/portfolio.html">Muntatge</a></li>
+                <li><i class="fa-solid fa-house"></i> <a href="../index.html">Inici</a></li>
+                <li><i class="fa-solid fa-water"></i> <a href="../pages/alvoltantdelabalena.html">Al voltant de la balena</a></li>
+                <li><i class="fa-solid fa-puzzle-piece"></i> <a href="../pages/portfolio.html">Muntatge</a></li>
                 <li><i class="fa-solid fa-building-columns"></i> <a href="#">Història</a></li>
                 <li><i class="fa-solid fa-screwdriver-wrench"></i><a href="#">Procés</a></li>
                 <li><i class="fa-solid fa-newspaper"></i> <a href="#">Notícies</a></li>
-                <li><i class="fa-solid fa-user"></i> <a href="./pages/logIn.html">Log In</a></li>
+                <li><i class="fa-solid fa-user"></i> <a href="../pages/logIn.html">Log In</a></li>
             </ul>
         </nav>
         <nav class="navbar">
             <ul>
-                <li><i class="fa-solid fa-house"></i> <a href="#">Inici</a></li>
-                <li><i class="fa-solid fa-water"></i> <a href="#">Al voltant de la balena</a></li>
-                <li><i class="fa-solid fa-puzzle-piece"></i> <a href="./pages/portfolio.html">Muntatge</a></li>
+                <li><i class="fa-solid fa-house"></i> <a href="../index.html">Inici</a></li>
+                <li><i class="fa-solid fa-water"></i> <a href="../pages/alvoltantdelabalena.html">Al voltant de la balena</a></li>
+                <li><i class="fa-solid fa-puzzle-piece"></i> <a href="../pages/portfolio.html">Muntatge</a></li>
                 <li><i class="fa-solid fa-building-columns"></i> <a href="#">Història</a></li>
                 <li><i class="fa-solid fa-screwdriver-wrench"></i><a href="#">Procés</a></li>
                 <li><i class="fa-solid fa-newspaper"></i> <a href="#">Notícies</a></li>
-                <li><i class="fa-solid fa-user"></i> <a href="./pages/logIn.html">Log In</a></li>
+                <li><i class="fa-solid fa-user"></i> <a href="../pages/logIn.html">Log In</a></li>
             </ul>
         </nav>
         <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
@@ -68,6 +68,15 @@
             <p>Visitan's a la nostra pàgina web del institut www.iesjoanramis.org.</p>
         </div>
     </footer>
+
+    <script>
+      const menuIcon = document.getElementById("menu-icon");
+      const mobileNavbar = document.querySelector(".mobile-navbar");
+
+      menuIcon.addEventListener("click", () => {
+        mobileNavbar.classList.toggle("show");
+      });
+    </script>
 
 </body>
 </html>

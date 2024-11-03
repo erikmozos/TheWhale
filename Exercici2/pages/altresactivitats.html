@@ -15,8 +15,8 @@
         <nav class="mobile-navbar">
             <ul>
                 <li><i class="fa-solid fa-house"></i> <a href="../index.html">Inici</a></li>
-                <li><i class="fa-solid fa-water"></i> <a href="#">Al voltant de la balena</a></li>
-                <li><i class="fa-solid fa-water"></i> <a href="portfolio.html">Muntatge</a></li>
+                <li><i class="fa-solid fa-water"></i> <a href="../pages/alvoltantdelabalena.html">Al voltant de la balena</a></li>
+                <li><i class="fa-solid fa-puzzle-piece"></i> <a href="portfolio.html">Muntatge</a></li>
                 <li><i class="fa-solid fa-building-columns"></i> <a href="#">Història</a></li>
                 <li><i class="fa-solid fa-screwdriver-wrench"></i><a href="#">Procés</a></li>
                 <li><i class="fa-solid fa-newspaper"></i> <a href="#">Notícies</a></li>
@@ -26,8 +26,8 @@
         <nav class="navbar">
             <ul>
                 <li><i class="fa-solid fa-house"></i> <a href="../index.html">Inici</a></li>
-                <li><i class="fa-solid fa-water"></i> <a href="#">Al voltant de la balena</a></li>
-                <li><i class="fa-solid fa-water"></i> <a href="portfolio.html">Muntatge</a></li>
+                <li><i class="fa-solid fa-water"></i> <a href="../pages/alvoltantdelabalena.html">Al voltant de la balena</a></li>
+                <li><i class="fa-solid fa-puzzle-piece"></i> <a href="portfolio.html">Muntatge</a></li>
                 <li><i class="fa-solid fa-building-columns"></i> <a href="#">Història</a></li>
                 <li><i class="fa-solid fa-screwdriver-wrench"></i><a href="#">Procés</a></li>
                 <li><i class="fa-solid fa-newspaper"></i> <a href="#">Notícies</a></li>
@@ -81,12 +81,20 @@
               ><i class="fa-brands fa-linkedin"></i
             ></a>
           </div>
-          <p>Contacte: emozosm20214@iesjoanramis.org | Instagram: @erik.mozos</p>
+          <p>Contacte: emozosm20214@iesjoanramis.org</p>
           <p>
             Visitan's a la nostra pàgina web del institut www.iesjoanramis.org.
           </p>
         </div>
       </footer>
 
+      <script>
+        const menuIcon = document.getElementById("menu-icon");
+        const mobileNavbar = document.querySelector(".mobile-navbar");
+  
+        menuIcon.addEventListener("click", () => {
+          mobileNavbar.classList.toggle("show");
+        });
+      </script>
 </body>
 </html>

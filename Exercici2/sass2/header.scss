@@ -1,4 +1,3 @@
-// header.scss
 @import 'variables';
 
 header {
@@ -70,9 +69,9 @@ header i {
 
 @media (min-width: 769px) {
     header {
-        display: grid;
+        display: grid !important;
         grid-template-rows: 1fr;
-        grid-template-columns: 1fr 3fr 1fr; // Ajusta las proporciones según necesites
+        grid-template-columns: 1fr 10fr 1fr;
         grid-template-areas: "logo navbar search";
         padding: 10px;
         background-color: $background-color;
