@@ -1,0 +1,61 @@
+#accessibility-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  font-size: 1rem;
+  padding: 10px 20px;
+  background-color: #7BE0AD;
+  color: #FFFFFF;
+  border: 2px solid red;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}
+#accessibility-btn:hover {
+  background-color: #559D7E;
+}
+
+#accessibility-menu {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 400px;
+  background-color: #F1F1F1;
+  color: #595959;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+#accessibility-menu h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #7BE0AD;
+  text-align: center;
+}
+
+#accessibility-menu label {
+  font-size: 1rem;
+  color: #595959;
+  margin-top: 1em;
+  display: block;
+}
+
+#accessibility-menu select,
+#accessibility-menu input[type=range] {
+  width: 100%;
+  margin: 5px 0 20px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+}
+
+#accessibility-menu input[type=range] {
+  cursor: pointer;
+}/*# sourceMappingURL=accesibility.css.map */

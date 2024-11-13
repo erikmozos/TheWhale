@@ -1,0 +1,66 @@
+@import "variables";
+
+#accessibility-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    font-size: 1rem;
+    padding: 10px 20px;
+    background-color: $primary-color;
+    color: $white-color;
+    border: 2px solid red; // Añade un borde para facilitar la visualización
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+
+    &:hover {
+        background-color: $secondary-color;
+    }
+}
+
+
+
+#accessibility-menu {
+    display: none;  // Initially hidden, toggled with JavaScript
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+    background-color: $background-color;
+    color: $text-color;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+#accessibility-menu h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: $primary-color;
+    text-align: center;
+}
+
+#accessibility-menu label {
+    font-size: 1rem;
+    color: $text-color;
+    margin-top: 1em;
+    display: block;
+}
+
+#accessibility-menu select,
+#accessibility-menu input[type="range"] {
+    width: 100%;
+    margin: 5px 0 20px;
+    padding: 8px;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    background-color: $white-color;
+}
+
+#accessibility-menu input[type="range"] {
+    cursor: pointer;
+}
