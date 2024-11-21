@@ -1,0 +1,37 @@
+// footer.scss
+@import 'variables';
+
+footer {
+    background: linear-gradient(90deg, $primary-color, $background-color);
+    color: $text-color;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 6px 15px $box-shadow-color;
+    
+}
+
+.footer-content p {
+    margin: 10px 0;
+}
+
+.social-icons {
+    margin: 20px 0;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    font-size: 24px;
+    color: $white-color;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: $black-color;
+}
+
+.footer-content p,
+.social-icons a {
+    white-space: normal;       // Permite que el texto se envuelva en varias líneas
+    word-wrap: break-word;     // Permite dividir el texto en palabras largas si es necesario
+    word-break: break-word;    // Fuerza un salto en palabras largas para evitar desbordes
+}
