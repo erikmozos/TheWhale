@@ -1,4 +1,3 @@
-
 header {
   display: flex;
   justify-content: space-between;
@@ -65,7 +64,7 @@ header i {
   display: none;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1250px) {
   header {
     display: grid !important;
     grid-template-rows: 1fr;

@@ -1,11 +1,17 @@
-console.log("Es js va");
-
-// Menu - Toggle the mobile navigation menu
 const menuIcon = document.getElementById('menu-icon');
 const mobileNavbar = document.querySelector('.mobile-navbar');
 
-menuIcon.addEventListener('click', () => {
+// Función para abrir y cerrar el menú
+menuIcon.addEventListener('click', (e) => {
     mobileNavbar.classList.toggle('show');
+});
+
+// Función para cerrar el menú si el clic es fuera del menú
+document.addEventListener('click', (e) => {
+    // Verifica si el clic es fuera del menú o el ícono
+    if (!mobileNavbar.contains(e.target) && e.target !== menuIcon) {
+        mobileNavbar.classList.remove('show');
+    }
 });
 
 // Menu de accessibilitat (Botó)
