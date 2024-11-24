@@ -36,68 +36,110 @@
         <input type="text" id="search-input" placeholder="Buscar..." aria-label="Search input" style="display: none;">
     </header>
 
-    <main class="mt-32 p-4">
-        <h2 class="text-center text-5xl font-bold mb-12" aria-label="News section title">Noticies</h2>
-        <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-            <article class="col-span-1 lg:col-span-2 xl:col-span-2 bg-white border-2 border-gray-300 rounded-lg shadow-md overflow-hidden">
-                <img class="w-full h-80 object-cover" src="../img/fitxes/1. WhatsApp Image 2024-10-10 at 09.45.48.jpeg" alt="News image 1" aria-label="Image related to news item 1">
-                <div class="p-4">
-                    <h3 class="text-xl font-semibold mb-2">Notícia 1</h3>
-                    <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut neque ac erat convallis scelerisque.</p>
-                    <button class="border-2 bg-gradient-peri-1 text-white font-bold py-2 px-4 rounded-md" aria-label="View news item 1">Veure noticia</button>
+    <aside>
+        <button id="accessibility-btn" aria-label="Opcions d'accessibilitat">Accessibilitat</button>
+    
+        <section id="accessibility-menu">
+            <h2>Opcions d'accessibilitat</h2>
+            
+            <!-- Opcions de contrast -->
+            <label for="contrast">Contrast:</label> 
+            <select id="contrast" aria-label="Selecciona una opció de contrast">
+                <option value="normal">Normal</option>
+                <option value="grayscale">Escala de grisos</option>
+                <option value="dark">Contrast fosc</option>
+                <option value="light">Contrast clar</option>
+                <option value="high-saturation">Alta saturació</option>
+                <option value="low-saturation">Baixa saturació</option>
+            </select>
+    
+            <!-- Configuració de la font -->
+            <label for="font-size">Mida de la font:</label>
+            <input type="range" id="font-size" min="1" max="3" step="0.1" value="1" aria-label="Ajusta la mida de la font">
+            
+            <label for="line-spacing">Espaiat de línia:</label>
+            <input type="range" id="line-spacing" min="1" max="3" step="0.1" value="1.5" aria-label="Ajusta l'espaiat de línia">
+    
+            <label for="word-spacing">Espaiat de paraules:</label>
+            <input type="range" id="word-spacing" min="0" max="1" step="0.1" value="0" aria-label="Ajusta l'espaiat de paraules">
+    
+            <label for="letter-spacing">Espaiat de lletres:</label>
+            <input type="range" id="letter-spacing" min="0" max="1" step="0.1" value="0" aria-label="Ajusta l'espaiat de lletres">
+        </section>
+    </aside>
+
+    <main class="px-4 py-4 mb-6">
+        <h2 class="font-lora text-text text-center text-5xl mt-32 mb-6" aria-label="News section title">Notícies</h2>
+        <div class="grid-container">
+            <!-- Artículo 1 -->
+            <article class="col-span-1 lg:col-span-2 xl:col-span-2 card">
+                <img class="card-large-image" src="./noticies/img-noticies/ballena-cos-nou-puerto-mahon-portum.jpg" alt="News image 1" aria-label="Image related to news item 1">
+                <div class="card-content">
+                    <h3 class="card-heading">Un Gegant del Mar a Punta Prima: La Història del Rorqual Comú de 1912</h3>
+                    <p class="card-text">En el seu darrer número de maig de 2015, la revista <strong>PORTUM Maó</strong> va rememorar un esdeveniment únic ocorregut el desembre de 1912...</p>
+                    <a href="./noticies/noticia1.html"><button class="btn" aria-label="View news item 1">Veure noticia</button></a>
                 </div>
             </article>
-
+    
+            <!-- Artículo 2 y 3 en grid -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <article class="bg-white border-2 border-gray-300 rounded-lg shadow-md overflow-hidden">
-                    <img class="w-full h-48 object-cover" src="../img/fitxes/2. WhatsApp Image 2024-10-10 at 09.45.48(1).jpeg" alt="News image 2" aria-label="Image related to news item 2">
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold mb-2">Notícia 2</h3>
-                        <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut neque ac erat convallis scelerisque.</p>
-                        <button class="border-2 bg-gradient-peri-1 text-white font-bold py-2 px-4 rounded-md" aria-label="View news item 2">Veure noticia</button>
+                <article class="card">
+                    <img class="card-image" src="./noticies/img-noticies/1.jpeg" alt="News image 2" aria-label="Image related to news item 2">
+                    <div class="card-content">
+                        <h3 class="card-subheading">Una balena històrica de 15 metres per al ‘Ramis'</h3>
+                        <p class="card-text">L'esquelet del cetaci serà exposat en el museu de l'institut de Maó</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut neque ac erat convallis scelerisque.</p>
+                        <a href="./noticies/noticia2.html"><button class="btn" aria-label="View news item 3">Veure noticia</button></a>
                     </div>
                 </article>
-
-                <article class="bg-white border-2 border-gray-300 rounded-lg shadow-md overflow-hidden">
-                    <img class="w-full h-48 object-cover" src="../img/fitxes/3. WhatsApp Image 3. 2024-10-10 at 09.45.48(2).jpeg" alt="News image 3" aria-label="Image related to news item 3">
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold mb-2">Notícia 3</h3>
-                        <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut neque ac erat convallis scelerisque.</p>
-                        <button class="border-2 bg-gradient-peri-1 text-white font-bold py-2 px-4 rounded-md" aria-label="View news item 3">Veure noticia</button>
+    
+                <article class="card">
+                    <img class="card-image" src="../img/konstantin-ignatovich-so4abxwHBW0-unsplash.jpg" alt="News image 3" aria-label="Image related to news item 3">
+                    <div class="card-content">
+                        <h3 class="card-subheading">Notícia 3</h3>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut neque ac erat convallis scelerisque.</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut neque ac erat convallis scelerisque.</p>
+                        <a href="./noticies/noticia2.html"><button class="btn" aria-label="View news item 3">Veure noticia</button></a>
                     </div>
                 </article>
             </div>
-
+    
+            <!-- Artículo 4 y 5 en grid -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <article class="bg-white border-2 border-gray-300 rounded-lg shadow-md overflow-hidden">
-                    <img class="w-full h-48 object-cover" src="../img/fitxes/4. WhatsApp Image 2024-10-10 at 09.45.48(3).jpeg" alt="News image 4" aria-label="Image related to news item 4">
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold mb-2">Notícia 4</h3>
-                        <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut neque ac erat convallis scelerisque.</p>
-                        <button class="border-2 bg-gradient-peri-1 text-white font-bold py-2 px-4 rounded-md" aria-label="View news item 4">Veure noticia</button>
+                <article class="card">
+                    <img class="card-image" src="../img/7abd9842-8954-4ac5-bf17-ab276419a032_16-9-aspect-ratio_default_0.jpg" alt="News image 4" aria-label="Image related to news item 4">
+                    <div class="card-content">
+                        <h3 class="card-subheading">Notícia 4</h3>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut neque ac erat convallis scelerisque.</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut neque ac erat convallis scelerisque.</p>
+                        <button class="btn" aria-label="View news item 4">Veure noticia</button>
                     </div>
                 </article>
-
-                <article class="bg-white border-2 border-gray-300 rounded-lg shadow-md overflow-hidden">
-                    <img class="w-full h-48 object-cover" src="../img/fitxes/5. WhatsApp Image 2024-10-10 at 09.45.48(4).jpeg" alt="News image 5" aria-label="Image related to news item 5">
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold mb-2">Notícia 5</h3>
-                        <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut neque ac erat convallis scelerisque.</p>
-                        <button class="border-2 bg-gradient-peri-1 text-white font-bold py-2 px-4 rounded-md" aria-label="View news item 5">Veure noticia</button>
+    
+                <article class="card">
+                    <img class="card-image" src="../img/rbuybxvkkjl7n5vp7ylpw3rs2y_2000.webp" alt="News image 5" aria-label="Image related to news item 5">
+                    <div class="card-content">
+                        <h3 class="card-subheading">Notícia 5</h3>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut neque ac erat convallis scelerisque.</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut neque ac erat convallis scelerisque.</p>
+                        <button class="btn" aria-label="View news item 5">Veure noticia</button>
                     </div>
                 </article>
             </div>
-
-            <article class="col-span-1 lg:col-span-2 xl:col-span-2 bg-white border-2 border-gray-300 rounded-lg shadow-md overflow-hidden">
-                <img class="w-full h-80 object-cover" src="../img/fitxes/6. WhatsApp Image 2024-10-10 at 09.45.48(5).jpeg" alt="News image 6" aria-label="Image related to news item 6">
-                <div class="p-4">
-                    <h3 class="text-xl font-semibold mb-2">Notícia 6</h3>
-                    <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut neque ac erat convallis scelerisque.</p>
-                    <button class="border-2 bg-gradient-peri-1 text-white font-bold py-2 px-4 rounded-md" aria-label="View news item 6">Veure noticia</button>
+    
+            <!-- Artículo 6 -->
+            <article class="col-span-1 lg:col-span-2 xl:col-span-2 card">
+                <img class="card-large-image" src="../img/Menorca.jpg" alt="News image 6" aria-label="Image related to news item 6">
+                <div class="card-content">
+                    <h3 class="card-heading">Notícia 6</h3>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut neque ac erat convallis scelerisque.</p>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut neque ac erat convallis scelerisque.</p>
+                    <button class="mt-10 btn" aria-label="View news item 6">Veure noticia</button>
                 </div>
             </article>
         </div>
     </main>
+    
 
     <footer>
         <div class="footer-content">
@@ -112,5 +154,6 @@
             <p>Visita la nostra pàgina web del institut: <a href="http://www.iesjoanramis.org" target="_blank" aria-label="IES Joan Ramis website">www.iesjoanramis.org</a>.</p>
         </div>
     </footer>
+    <script src="../js/script.js"></script>
 </body>
 </html>

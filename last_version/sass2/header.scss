@@ -4,7 +4,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
     background-color: $background-color;
     box-shadow: 0 6px 15px $box-shadow-color;
     width: 100%;
@@ -14,9 +13,7 @@ header {
     z-index: 1000;
 }
 
-header i {
-    padding-top: 15px;
-}
+
 
 .logo-img {
     width: 50px;
@@ -73,7 +70,6 @@ header i {
         grid-template-rows: 1fr;
         grid-template-columns: 1fr 10fr 1fr;
         grid-template-areas: "logo navbar search";
-        padding: 10px;
         background-color: $background-color;
         box-shadow: 0 4px 8px $box-shadow-light-color;
         position: fixed;

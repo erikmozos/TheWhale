@@ -5,10 +5,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
   background-color: #F1F1F1;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
   width: 100%;
+  padding: 10px;
   height: 90px;
   position: fixed;
   top: 0;
@@ -69,11 +69,11 @@ header i {
 
 @media (min-width: 1250px) {
   header {
+    padding: 0 !important;
     display: grid !important;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 10fr 1fr;
     grid-template-areas: "logo navbar search";
-    padding: 10px;
     background-color: #F1F1F1;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: fixed;
@@ -141,7 +141,7 @@ footer {
 .social-icons a {
   margin: 0 10px;
   font-size: 24px;
-  color: #FFFFFF;
+  color: #000000;
   text-decoration: none;
 }
 
@@ -185,7 +185,7 @@ footer {
   background-color: #F1F1F1;
   color: #595959;
   padding: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   z-index: 1000;
 }

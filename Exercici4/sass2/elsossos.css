@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap");
@@ -5,10 +6,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
   background-color: #F1F1F1;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
   width: 100%;
+  padding: 10px;
   height: 90px;
   position: fixed;
   top: 0;
@@ -69,11 +70,11 @@ header i {
 
 @media (min-width: 1250px) {
   header {
+    padding: 0 !important;
     display: grid !important;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 10fr 1fr;
     grid-template-areas: "logo navbar search";
-    padding: 10px;
     background-color: #F1F1F1;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: fixed;
@@ -141,7 +142,7 @@ footer {
 .social-icons a {
   margin: 0 10px;
   font-size: 24px;
-  color: #FFFFFF;
+  color: #000000;
   text-decoration: none;
 }
 
@@ -185,7 +186,7 @@ footer {
   background-color: #F1F1F1;
   color: #595959;
   padding: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   z-index: 1000;
 }
@@ -263,7 +264,11 @@ body main {
 }
 body main section {
   margin-bottom: 40px;
+  height: 100%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
 }
 body main section h2 {
   font-family: "Lora", serif;
@@ -272,16 +277,21 @@ body main section h2 {
   margin-bottom: 10px;
 }
 body main section img {
-  max-width: 30%;
+  max-width: 100%;
+  width: 100%;
   height: auto;
+  -o-object-fit: fill;
+     object-fit: fill;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 10px;
+  justify-self: center;
 }
 body main section p {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   color: #595959;
+  align-self: start;
 }
 
 .button {
@@ -304,4 +314,36 @@ body main section p {
 }
 .button:hover {
   background-color: #559D7E;
+}
+
+/* Media Queries para pantallas más grandes */
+@media (min-width: 768px) {
+  main {
+    padding: 40px;
+  }
+  main section {
+    display: grid !important;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    gap: 20px;
+  }
+  main section h2 {
+    grid-column: 1/2;
+    margin-bottom: 20px;
+  }
+  main section img {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    max-width: 100%;
+    justify-self: center;
+  }
+  main section p {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    text-align: left;
+  }
+  .button {
+    font-size: 20px;
+  }
 }/*# sourceMappingURL=elsossos.css.map */

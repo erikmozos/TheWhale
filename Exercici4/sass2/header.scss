@@ -4,10 +4,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
     background-color: $background-color;
     box-shadow: 0 6px 15px $box-shadow-color;
     width: 100%;
+    padding: 10px;
     height: $header-height;
     position: fixed;
     top: 0;
@@ -69,11 +69,11 @@ header i {
 
 @media (min-width: 1250px) {
     header {
+        padding: 0 !important;
         display: grid !important;
         grid-template-rows: 1fr;
         grid-template-columns: 1fr 10fr 1fr;
         grid-template-areas: "logo navbar search";
-        padding: 10px;
         background-color: $background-color;
         box-shadow: 0 4px 8px $box-shadow-light-color;
         position: fixed;

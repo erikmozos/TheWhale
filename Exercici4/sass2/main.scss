@@ -67,7 +67,7 @@ main {
     background-color: #F2F2F2;
     border-radius: 8px;
     border: 2px solid #2E3A45;
-    box-shadow: 0 4px 12px rgba(46, 58, 69, 0.2);
+    @include box-shadow(rgba(46, 58, 69, 0.2), 12px);
     margin: 20px auto;
 }
 
@@ -92,7 +92,7 @@ main {
     margin: 50px;
     position: relative;
     perspective: 1000px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    @include box-shadow(rgba(0, 0, 0, 0.2), 12px);
     transition: transform 0.3s ease;
 }
 
@@ -140,7 +140,7 @@ main {
     padding: 20px;
     border-radius: 10px;
     background-color: $background-color;
-    box-shadow: 0 4px 15px #2E3A45;
+    @include box-shadow(#2E3A45, 15px);
     overflow: hidden;
     position: relative;
 }

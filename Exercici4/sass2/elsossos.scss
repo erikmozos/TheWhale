@@ -19,23 +19,34 @@ body {
 
         section {
             margin-bottom: 40px;
+            height: 100%;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
 
             h2 {
                 @include text-style($font-family-lora, $font-size-h3, $text-color);
                 margin-bottom: 10px;
+                
             }
 
             img {
-                max-width: 30%;
+                max-width: 100%;
+                width: 100%;
                 height: auto;
+                object-fit: fill;
                 @include border-radius(8px);
                 @include box-shadow($box-shadow-light-color, 10px);
                 margin-bottom: 10px;
+                
+                justify-self: center;
             }
 
             p {
                 @include text-style($font-family-open-sans, $font-size-p, $text-color);
+                align-self: start;
+                
             }
         }
     }
@@ -62,5 +73,42 @@ body {
 
     &:hover {
         background-color: $secondary-color;
+    }
+}
+
+/* Media Queries para pantallas más grandes */
+@media (min-width: 768px) {
+    main {
+        padding: 40px;
+
+        section {
+            display: grid !important;
+            grid-template-columns: auto auto; // Imagen en una columna y texto en otra
+            grid-template-rows: auto auto;
+            align-items: center;
+            gap: 20px;
+
+            h2 {
+                grid-column: 1 / 2; // Título ocupa todo el ancho
+                margin-bottom: 20px;
+            }
+
+            img {
+                grid-row: 2 / 3;
+                grid-column: 2 / 3;
+                max-width: 100%;
+                justify-self: center;
+            }
+
+            p {
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+                text-align: left;
+            }
+        }
+    }
+
+    .button {
+        font-size: 20px;
     }
 }
