@@ -15,10 +15,6 @@ header {
   z-index: 1000;
 }
 
-header i {
-  padding-top: 15px;
-}
-
 .logo-img {
   width: 50px;
 }

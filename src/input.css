@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.large-gallery img {
+    width: 90%; /* Assegura que ocupin el 90% de l’amplada disponible */
+    max-width: 1200px; /* Defineix un màxim perquè no es distorsionin */
+    margin: auto; /* Centra les imatges */
+    display: block; /* Centrat verticalment */
+  }
