@@ -141,7 +141,7 @@ footer {
 .social-icons a {
   margin: 0 10px;
   font-size: 24px;
-  color: #FFFFFF;
+  color: #000000;
   text-decoration: none;
 }
 
@@ -185,7 +185,7 @@ footer {
   background-color: #F1F1F1;
   color: #595959;
   padding: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   z-index: 1000;
 }

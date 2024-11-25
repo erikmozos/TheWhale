@@ -724,20 +724,16 @@ video {
   margin-right: auto;
 }
 
-.mb-12 {
-  margin-bottom: 3rem;
-}
-
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-
 .mb-4 {
   margin-bottom: 1rem;
 }
 
 .mb-6 {
   margin-bottom: 1.5rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
 }
 
 .mt-16 {
@@ -871,16 +867,16 @@ video {
   height: 0.25rem;
 }
 
-.h-48 {
-  height: 12rem;
-}
-
 .h-72 {
   height: 18rem;
 }
 
-.h-80 {
-  height: 20rem;
+.h-full {
+  height: 100%;
+}
+
+.h-96 {
+  height: 24rem;
 }
 
 .w-\[this-is\\\\\] {
@@ -1769,10 +1765,6 @@ video {
   border-radius: 0.5rem;
 }
 
-.rounded-md {
-  border-radius: 0.375rem;
-}
-
 .rounded-b {
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
@@ -1837,10 +1829,6 @@ video {
 
 .border {
   border-width: 1px;
-}
-
-.border-2 {
-  border-width: 2px;
 }
 
 .border-x {
@@ -1924,11 +1912,6 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-
-.bg-gray-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
 }
 
 .bg-gradient-peri-1 {
@@ -2045,8 +2028,8 @@ video {
      object-fit: scale-down;
 }
 
-.p-3 {
-  padding: 0.75rem;
+.p-2 {
+  padding: 0.5rem;
 }
 
 .p-4 {
@@ -2055,10 +2038,6 @@ video {
 
 .p-6 {
   padding: 1.5rem;
-}
-
-.p-2 {
-  padding: 0.5rem;
 }
 
 .px-1 {
@@ -2094,6 +2073,11 @@ video {
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .pb-4 {
@@ -2179,11 +2163,6 @@ video {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
 }
 
 .font-bold {
@@ -2287,11 +2266,6 @@ video {
 .text-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity, 1));
-}
-
-.text-gray-600 {
-  --tw-text-opacity: 1;
-  color: rgb(75 85 99 / var(--tw-text-opacity, 1));
 }
 
 .text-gray-700 {
@@ -2698,6 +2672,93 @@ video {
   /* Centrat verticalment */
 }
 
+.btn {
+  border-radius: 0.375rem;
+  border-width: 2px;
+  background-image: linear-gradient(90deg, #7BE0AD, #559D7E);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+/* Estilo para los artículos */
+
+.card {
+  overflow: hidden;
+  border-radius: 0.5rem;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity, 1));
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 241 241 / var(--tw-bg-opacity, 1));
+  --tw-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  --tw-shadow-colored: 0 4px 15px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.card-image {
+  height: 12rem;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.card-large-image {
+  height: 20rem;
+  width: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+.card-content {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.card-heading {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+}
+
+.card-subheading {
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+}
+
+.card-text {
+  margin-bottom: 1rem;
+  --tw-text-opacity: 1;
+  color: rgb(89 89 89 / var(--tw-text-opacity, 1));
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .grid-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -2772,18 +2833,26 @@ video {
     grid-column: span 2 / span 2;
   }
 
+  .lg\:w-1\/3 {
+    width: 33.333333%;
+  }
+
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lg\:flex-row {
+    flex-direction: row;
+  }
+
+  .lg\:flex-col {
+    flex-direction: column;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:col-span-2 {
     grid-column: span 2 / span 2;
-  }
-
-  .xl\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 

@@ -23,11 +23,11 @@
       <nav class="mobile-navbar">
         <ul>
           <li>
-            <i class="fa-solid fa-house"></i> <a href="../index.html">Inici</a>
+            <i class="fa-solid fa-house"></i> <a href="../../index.html">Inici</a>
           </li>
           <li>
             <i class="fa-solid fa-water"></i>
-            <a href="../pages/alvoltantdelabalena.html"
+            <a href="../alvoltantdelabalena.html"
               >Al voltant de la balena</a
             >
           </li>
@@ -41,22 +41,22 @@
           </li>
           <li>
             <i class="fa-solid fa-newspaper"></i>
-            <a href="../pages/noticies.html">Notícies</a>
+            <a href="../noticies.html">Notícies</a>
           </li>
           <li>
             <i class="fa-solid fa-user"></i>
-            <a href="../pages/logIn.html">Log In</a>
+            <a href="../logIn.html">Log In</a>
           </li>
         </ul>
       </nav>
       <nav class="navbar">
         <ul>
           <li>
-            <i class="fa-solid fa-house"></i> <a href="../index.html">Inici</a>
+            <i class="fa-solid fa-house"></i> <a href="../../index.html">Inici</a>
           </li>
           <li>
             <i class="fa-solid fa-water"></i>
-            <a href="../pages/alvoltantdelabalena.html"
+            <a href="../alvoltantdelabalena.html"
               >Al voltant de la balena</a
             >
           </li>
@@ -70,11 +70,11 @@
           </li>
           <li>
             <i class="fa-solid fa-newspaper"></i>
-            <a href="../pages/noticies.html">Notícies</a>
+            <a href="../noticies.html">Notícies</a>
           </li>
           <li>
             <i class="fa-solid fa-user"></i>
-            <a href="../pages/logIn.html">Log In</a>
+            <a href="../logIn.html">Log In</a>
           </li>
         </ul>
       </nav>
@@ -87,6 +87,40 @@
         style="display: none"
       />
     </header>
+    
+    <aside>
+      <button id="accessibility-btn" aria-label="Opcions d'accessibilitat">Accessibilitat</button>
+  
+      <section id="accessibility-menu">
+          <h2>Opcions d'accessibilitat</h2>
+          
+          <!-- Opcions de contrast -->
+          <label for="contrast">Contrast:</label> 
+          <select id="contrast" aria-label="Selecciona una opció de contrast">
+              <option value="normal">Normal</option>
+              <option value="grayscale">Escala de grisos</option>
+              <option value="dark">Contrast fosc</option>
+              <option value="light">Contrast clar</option>
+              <option value="high-saturation">Alta saturació</option>
+              <option value="low-saturation">Baixa saturació</option>
+          </select>
+  
+          <!-- Configuració de la font -->
+          <label for="font-size">Mida de la font:</label>
+          <input type="range" id="font-size" min="1" max="3" step="0.1" value="1" aria-label="Ajusta la mida de la font">
+          
+          <label for="line-spacing">Espaiat de línia:</label>
+          <input type="range" id="line-spacing" min="1" max="3" step="0.1" value="1.5" aria-label="Ajusta l'espaiat de línia">
+  
+          <label for="word-spacing">Espaiat de paraules:</label>
+          <input type="range" id="word-spacing" min="0" max="1" step="0.1" value="0" aria-label="Ajusta l'espaiat de paraules">
+  
+          <label for="letter-spacing">Espaiat de lletres:</label>
+          <input type="range" id="letter-spacing" min="0" max="1" step="0.1" value="0" aria-label="Ajusta l'espaiat de lletres">
+      </section>
+  </aside>
+
+
     <main class="mt-20 p-4 bg-gray-50">
         <article class="max-w-4xl mx-auto bg-white border rounded-lg shadow-md overflow-hidden">
           <img
@@ -129,10 +163,10 @@
             <img class="rounded-lg shadow-lg border border-gray-300" src="../../img/portfolioimages/53649947737_daa3de1a03.jpg" alt="Coordinadors del projecte Enric Camps i Raquel Taltavull">
             <img class="rounded-lg shadow-lg border border-gray-300" src="../../img/portfolioimages/53703642939_9dc3494667.jpg" alt="Alumnat treballant en l'esquelet de la balena">
           </div>
-         
+        </section>
+          <!-- Componente de formulario de comentarios -->
           <section class="max-w-4xl mx-auto mt-8 bg-white p-4 rounded-lg shadow-md">
             <h3 class="text-gray-700 text-lg font-semibold mb-4">Deixa un comentari:</h3>
-            <!-- Formulario de Comentario -->
             <form action="#" method="POST" class="flex flex-col space-y-4">
               <textarea
                 id="comment"
@@ -142,31 +176,31 @@
                 placeholder="Escriu el teu comentari..."
                 required
               ></textarea>
-              <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+              <button type="submit" class="btn">
                 Enviar
               </button>
             </form>
           </section>
-        
-          <!-- Ejemplos de Comentarios -->
-          <section class="max-w-4xl mx-auto mt-8 bg-white p-4 rounded-lg shadow-md">
+    
+          <!-- Componente de lista de comentarios -->
+          <section class="max-w-4xl mx-auto mt-8 bg-white p-4 rounded-lg shadow-md flex flex-col justify-center">
             <h3 class="text-gray-700 text-lg font-semibold mb-4">Comentaris:</h3>
-        
+            
             <!-- Comentario 1 -->
-            <div class="border-b pb-4 mb-4">
+            <div class="border-b pb-4 mb-4 w-full">
               <p class="text-gray-800"><strong>Joan:</strong> M'encanta aquest projecte! És molt interessant veure com els alumnes treballen en la restauració de la balena.</p>
             </div>
-        
+          
             <!-- Comentario 2 -->
-            <div class="border-b pb-4 mb-4">
+            <div class="border-b pb-4 mb-4 w-full">
               <p class="text-gray-800"><strong>Anna:</strong> Quina gran iniciativa educativa! Felicitats als professors i a tots els alumnes que participen.</p>
             </div>
-        
+          
             <!-- Comentario 3 -->
-            <div class="pb-4">
+            <div class="pb-4 w-full">
               <p class="text-gray-800"><strong>Marc:</strong> Molt bona feina! És fantàstic veure un projecte d'aquesta magnitud a Menorca.</p>
             </div>
-          </section>
+        </section>
         </main>
       
     
@@ -195,6 +229,6 @@
         </p>
       </div>
     </footer>
-    <script src="../js/script.js"></script>
+    <script src="../../js/script.js"></script>
   </body>
 </html>

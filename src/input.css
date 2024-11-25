@@ -8,3 +8,40 @@
     margin: auto; /* Centra les imatges */
     display: block; /* Centrat verticalment */
   }
+
+.btn {
+  @apply border-2 bg-gradient-peri-1 text-white font-bold py-2 px-4 rounded-md;
+}
+
+/* Estilo para los artículos */
+.card {
+  @apply bg-background border-2 border-gray-300 rounded-lg shadow-default overflow-hidden;
+}
+
+.card-image {
+  @apply w-full h-48 object-cover;
+}
+
+.card-large-image {
+  @apply w-full h-80 object-fill;
+}
+
+.card-content {
+  @apply px-4 py-2;
+}
+
+.card-heading {
+  @apply text-xl font-semibold mb-2;
+}
+
+.card-subheading {
+  @apply text-lg font-semibold mb-2;
+}
+
+.card-text {
+  @apply text-text mb-4;
+}
+
+.grid-container {
+  @apply grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8;
+}
