@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../sass2/commons.css">
+    <link rel="stylesheet" href="../assets/libreries/fontawesome-free-6.6.0-web/fontawesome-free-6.6.0-web/css/all.min.css">
+    <link rel="stylesheet" href="../../src/output.css">
+    <title>Admin</title>
+</head>
+<body>
+    <header>
+        <i id="menu-icon" class="fa-solid fa-bars" aria-label="Open menu" role="button" tabindex="0"></i>
+        <img class="logo-img" src="../img/logo_aula_museu-removebg-preview.png" alt="Logo of TheWale" />
+        <nav class="mobile-navbar" aria-label="Mobile navigation">
+            <ul>
+                <li><i class="fa-solid fa-house" aria-hidden="true"></i> <a href="../index.html" aria-label="Home page">Inici</a></li>
+                <li><i class="fa-solid fa-water" aria-hidden="true"></i> <a href="alvoltantdelabalena.html" aria-label="About the whale">Al voltant de la balena</a></li>
+                <li><i class="fa-solid fa-puzzle-piece" aria-hidden="true"></i> <a href="portfolio.html" aria-label="Portfolio">Muntatge</a></li>
+                <li><i class="fa-solid fa-building-columns" aria-hidden="true"></i> <a href="#" aria-label="History">Història</a></li>
+                <li><i class="fa-solid fa-newspaper" aria-hidden="true"></i> <a href="../pages/noticies.html" aria-label="News">Notícies</a></li>
+                <li><i class="fa-solid fa-user" aria-hidden="true"></i> <a href="logIn.html" aria-label="Log in">Log In</a></li>
+            </ul>
+        </nav>
+        <nav class="navbar" aria-label="Primary navigation">
+            <ul>
+                <li><i class="fa-solid fa-house" aria-hidden="true"></i> <a href="../index.html" aria-label="Home page">Inici</a></li>
+                <li><i class="fa-solid fa-water" aria-hidden="true"></i> <a href="alvoltantdelabalena.html" aria-label="About the whale">Al voltant de la balena</a></li>
+                <li><i class="fa-solid fa-puzzle-piece" aria-hidden="true"></i> <a href="portfolio.html" aria-label="Portfolio">Muntatge</a></li>
+                <li><i class="fa-solid fa-building-columns" aria-hidden="true"></i> <a href="#" aria-label="History">Història</a></li>
+                <li><i class="fa-solid fa-newspaper" aria-hidden="true"></i> <a href="../pages/noticies.html" aria-label="News">Notícies</a></li>
+                <li><i class="fa-solid fa-user" aria-hidden="true"></i> <a href="logIn.html" aria-label="Log in">Log In</a></li>
+            </ul>
+        </nav>
+        <i class="fa-solid fa-magnifying-glass" id="search-icon" aria-label="Search icon" role="button" tabindex="0"></i>
+        <input type="text" id="search-input" placeholder="Buscar..." aria-label="Search input" style="display: none;">
+    </header>
+
+    <main class="px-4 py-4 mb-6">
+        <h2 class="font-lora text-center text-5xl mt-32 mb-6">Admin</h2>
+    
+        <div class="user-list space-y-6 p-32">
+            <!-- Persona 1 -->
+            <div class="user-item flex items-center justify-between p-4 bg-white shadow-lg rounded-lg mb-4">
+                <div class="user-info flex items-center space-x-4">
+                    <div class="user-avatar w-12 h-12 rounded-full overflow-hidden">
+                        <!-- Imagen de la persona -->
+                        <img src="path_to_profile_image.jpg" alt="Avatar Persona 1" class="object-cover w-full h-full">
+                    </div>
+                    <h3 class="text-xl font-semibold">Persona 1</h3>
+                </div>
+    
+                <div class="user-settings relative w-full">
+                    <button class="settings-btn text-gray-600 hover:text-gray-800 focus:outline-none" aria-label="Abrir opciones de configuración" onclick="toggleDropdown('persona1-dropdown')">
+                        <i class="fa-solid fa-gear text-lg"></i>
+                    </button>
+                    <ul id="persona1-dropdown" class="dropdown-menu hidden bg-white shadow-lg rounded-lg mt-2 w-full py-2 z-20">
+                        <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Editar noticia</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Editar història</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Editar processos</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Eliminar usuari</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- Persona 2 -->
+            <div class="user-item flex items-center justify-between p-4 bg-white shadow-lg rounded-lg mb-4">
+                <div class="user-info flex items-center space-x-4">
+                    <div class="user-avatar w-12 h-12 rounded-full overflow-hidden">
+                        <!-- Imagen de la persona -->
+                        <img src="path_to_profile_image2.jpg" alt="Avatar Persona 2" class="object-cover w-full h-full">
+                    </div>
+                    <h3 class="text-xl font-semibold">Persona 2</h3>
+                </div>
+    
+                <div class="user-settings relative w-full">
+                    <button class="settings-btn text-gray-600 hover:text-gray-800 focus:outline-none" aria-label="Abrir opciones de configuración" onclick="toggleDropdown('persona2-dropdown')">
+                        <i class="fa-solid fa-gear text-lg"></i>
+                    </button>
+                    <ul id="persona2-dropdown" class="dropdown-menu hidden bg-white shadow-lg rounded-lg mt-2 right-0 w-full py-2 z-20">
+                        <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Editar noticia</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Editar història</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Editar processos</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Eliminar usuari</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+        <div class="add-user-section mt-10 text-center">
+            <button class="add-user-btn px-6 py-3 bg-purple-600 text-white rounded-full shadow-md hover:bg-purple-700 focus:outline-none" aria-label="Añadir nuevo usuario">
+                <i class="fa-solid fa-user-plus text-lg mr-2"></i> Afegir usuari
+            </button>
+        </div>
+    </main>
+    
+    <!-- Script para manejar la apertura y cierre del menú desplegable -->
+    
+    
+
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 TheWale. All rights reserved to Erik Mozos.</p>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook" title="Visit our Facebook page"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter" title="Visit our Twitter profile"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram" title="Visit our Instagram profile"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" title="Visit our LinkedIn profile"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <p>Contacte: <a href="mailto:emozosm20214@iesjoanramis.org" aria-label="Email Erik Mozos">emozosm20214@iesjoanramis.org</a></p>
+            <p>Visita la nostra pàgina web del institut: <a href="http://www.iesjoanramis.org" target="_blank" aria-label="IES Joan Ramis website">www.iesjoanramis.org</a>.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleDropdown(id) {
+            // Cerrar todos los menús desplegables
+            const allDropdowns = document.querySelectorAll('.dropdown-menu');
+            allDropdowns.forEach(function(dropdown) {
+                if (dropdown.id !== id) {
+                    dropdown.classList.add('hidden');
+                }
+            });
+    
+            // Alternar el menú desplegable de la persona seleccionada
+            const dropdown = document.getElementById(id);
+            dropdown.classList.toggle('hidden');
+            dropdown.classList.toggle('absolute');
+        }
+    </script>
+</body>
+</html>
