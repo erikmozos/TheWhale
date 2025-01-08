@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" href="../assets/libreries/fontawesome-free-6.6.0-web/fontawesome-free-6.6.0-web/css/all.min.css">
     <link rel="stylesheet" href="../sass2/login.css" />
+    <link rel="stylesheet" href="../../src/output.css">
     <title>Iniciar Sessió</title>
   </head>
 
@@ -113,26 +114,29 @@
   </aside>
   
 
-    <main>
-      <div class="login-container">
-        <h2>Iniciar Sessió</h2>
-        <form method="POST">
-          <!-- Cambia la acción según tu backend -->
-          <div class="input-group">
-            <label for="email">Email</label>
-            <input type="text" id="email" name="email" />
-          </div>
-          <div class="input-group">
-            <label for="password">Contrasenya</label>
-            <input type="password" id="password" name="password" />
-          </div>
-          <button type="submit">Iniciar Sessió</button>
-        </form>
-        <div class="footer">
-          <a href="#">¿Has oblidat la contrasenya?</a>
+  <main>
+    <div class="login-container">
+      <h2>Iniciar Sessió</h2>
+      <form method="POST">
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" />
         </div>
+        <div class="input-group">
+          <label for="password">Contrasenya</label>
+          <input type="password" id="password" name="password" />
+        </div>
+        <button type="submit">Iniciar Sessió</button>
+      </form>
+      
+      <div id="message-container" class="message-container"></div>
+      
+      <div class="footer">
+        <a href="#">¿Has oblidat la contrasenya?</a>
       </div>
-    </main>
+    </div>
+  </main>
+  
 
 
     <footer>

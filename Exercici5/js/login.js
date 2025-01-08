@@ -1,20 +1,24 @@
 $(document).ready(function () {
     const emailInput = $('#email');
     const passwordInput = $('#password');
+    const messageContainer = $('#message-container'); // Seleccionamos el contenedor para los mensajes
 
-    $('.login-container form').on("submit",function (e) {
+    $('.login-container form').on("submit", function (e) {
         e.preventDefault();
 
         const email = emailInput.val().trim();
         const password = passwordInput.val().trim();
 
+        // Limpiar mensajes anteriores
+        messageContainer.empty();
+
         if (!email || !password) {  
-            alert('Introdueix les dades.');
+            messageContainer.html('<p class="text-red-600 font-bold">Per favor, introdueix un email i la contraseña.</p>');
             return;
         }
 
         if (!validateEmail(email)) {
-            alert('Introdueix un email vàlid.');
+            messageContainer.html('<p class="text-red-600 font-bold">Per favor, introdueix un email vàlid.</p>');
             return;
         }
 
@@ -23,13 +27,13 @@ $(document).ready(function () {
         const user = users.find(u => u.email === email);
 
         if (!user) {
-            alert('Usuario no encontrado.');
+            messageContainer.html('<p class="text-red-600 font-bold">Usuari no trobat. Verifica el teu email.</p>');
             return;
         }
 
         const hashedPassword = CryptoJS.SHA256(password + user.salt).toString();
         if (hashedPassword === user.password_hash) {
-            alert('Inicio de sesión exitoso.');
+            messageContainer.html('<p class="text-green-600 font-bold">Inici de sesió exitós.</p>');
 
             const userLoggedIn = {
                 id: user.id,
@@ -41,18 +45,17 @@ $(document).ready(function () {
                 active: user.active,
                 is_first_login: user.is_first_login
             };
-
             sessionStorage.setItem('user_logged_in', JSON.stringify(userLoggedIn));
 
             console.log("Usuario logueado:", userLoggedIn);
 
-            if(!userLoggedIn.is_first_login){
-                window.location.href = "../index.html";
-            }else{
+            if (!userLoggedIn.is_first_login) {
+                window.location.href = "../pages/admin.html";
+            } else {
                 window.location.href = "../pages/logIn-changePassword.html";
             }
         } else {
-            alert('Contraseña incorrecta.');
+            messageContainer.html('<p class="text-red-600 font-bold">Contraseña incorrecta. Inténtalo de nuevo.</p>');
         }
     });
 

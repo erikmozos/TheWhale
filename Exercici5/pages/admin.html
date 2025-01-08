@@ -19,7 +19,7 @@
                 <li><i class="fa-solid fa-puzzle-piece" aria-hidden="true"></i> <a href="portfolio.html" aria-label="Portfolio">Muntatge</a></li>
                 <li><i class="fa-solid fa-building-columns" aria-hidden="true"></i> <a href="#" aria-label="History">Història</a></li>
                 <li><i class="fa-solid fa-newspaper" aria-hidden="true"></i> <a href="../pages/noticies.html" aria-label="News">Notícies</a></li>
-                <li><i class="fa-solid fa-user" aria-hidden="true"></i> <a href="logIn.html" aria-label="Log in">Log In</a></li>
+                <li><i class="fa-solid fa-user" aria-hidden="true"></i> <a href="logIn.html" aria-label="Log in" id="login-link">Log In</a></li>
             </ul>
         </nav>
         <nav class="navbar" aria-label="Primary navigation">
@@ -29,69 +29,50 @@
                 <li><i class="fa-solid fa-puzzle-piece" aria-hidden="true"></i> <a href="portfolio.html" aria-label="Portfolio">Muntatge</a></li>
                 <li><i class="fa-solid fa-building-columns" aria-hidden="true"></i> <a href="#" aria-label="History">Història</a></li>
                 <li><i class="fa-solid fa-newspaper" aria-hidden="true"></i> <a href="../pages/noticies.html" aria-label="News">Notícies</a></li>
-                <li><i class="fa-solid fa-user" aria-hidden="true"></i> <a href="logIn.html" aria-label="Log in">Log In</a></li>
+                <li><i class="fa-solid fa-user" aria-hidden="true"></i> <a href="logIn.html" aria-label="Log in" id="login-link-desktop">Log In</a></li>
             </ul>
         </nav>
         <i class="fa-solid fa-magnifying-glass" id="search-icon" aria-label="Search icon" role="button" tabindex="0"></i>
         <input type="text" id="search-input" placeholder="Buscar..." aria-label="Search input" style="display: none;">
     </header>
 
+    <aside>
+        <button id="accessibility-btn" aria-label="Opcions d'accessibilitat">Accessibilitat</button>
+    
+        <section id="accessibility-menu">
+            <h2>Opcions d'accessibilitat</h2>
+            
+            <!-- Opcions de contrast -->
+            <label for="contrast">Contrast:</label> 
+            <select id="contrast" aria-label="Selecciona una opció de contrast">
+                <option value="normal">Normal</option>
+                <option value="grayscale">Escala de grisos</option>
+                <option value="dark">Contrast fosc</option>
+                <option value="light">Contrast clar</option>
+                <option value="high-saturation">Alta saturació</option>
+                <option value="low-saturation">Baixa saturació</option>
+            </select>
+    
+            <!-- Configuració de la font -->
+            <label for="font-size">Mida de la font:</label>
+            <input type="range" id="font-size" min="1" max="3" step="0.1" value="1" aria-label="Ajusta la mida de la font">
+            
+            <label for="line-spacing">Espaiat de línia:</label>
+            <input type="range" id="line-spacing" min="1" max="3" step="0.1" value="1.5" aria-label="Ajusta l'espaiat de línia">
+    
+            <label for="word-spacing">Espaiat de paraules:</label>
+            <input type="range" id="word-spacing" min="0" max="1" step="0.1" value="0" aria-label="Ajusta l'espaiat de paraules">
+    
+            <label for="letter-spacing">Espaiat de lletres:</label>
+            <input type="range" id="letter-spacing" min="0" max="1" step="0.1" value="0" aria-label="Ajusta l'espaiat de lletres">
+        </section>
+    </aside>
+
     <main class="px-4 py-4 mb-6">
         <h2 class="font-lora text-center text-5xl mt-32 mb-6">Admin</h2>
     
-        <div class="user-list space-y-6 p-32">
-            <!-- Persona 1 -->
-            <div class="user-item flex items-center justify-between p-4 bg-white shadow-lg rounded-lg mb-4">
-                <div class="user-info flex items-center space-x-4">
-                    <div class="user-avatar w-12 h-12 rounded-full overflow-hidden">
-                        <!-- Imagen de la persona -->
-                        <img src="path_to_profile_image.jpg" alt="Avatar Persona 1" class="object-cover w-full h-full">
-                    </div>
-                    <h3 class="text-xl font-semibold">Persona 1</h3>
-                </div>
-    
-                <div class="user-settings relative w-full">
-                    <button class="settings-btn text-gray-600 hover:text-gray-800 focus:outline-none" aria-label="Abrir opciones de configuración" onclick="toggleDropdown('persona1-dropdown')">
-                        <i class="fa-solid fa-gear text-lg"></i>
-                    </button>
-                    <ul id="persona1-dropdown" class="dropdown-menu hidden bg-white shadow-lg rounded-lg mt-2 w-full py-2 z-20">
-                        <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Editar noticia</a></li>
-                        <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Editar història</a></li>
-                        <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Editar processos</a></li>
-                        <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Eliminar usuari</a></li>
-                    </ul>
-                </div>
-            </div>
-    
-            <!-- Persona 2 -->
-            <div class="user-item flex items-center justify-between p-4 bg-white shadow-lg rounded-lg mb-4">
-                <div class="user-info flex items-center space-x-4">
-                    <div class="user-avatar w-12 h-12 rounded-full overflow-hidden">
-                        <!-- Imagen de la persona -->
-                        <img src="path_to_profile_image2.jpg" alt="Avatar Persona 2" class="object-cover w-full h-full">
-                    </div>
-                    <h3 class="text-xl font-semibold">Persona 2</h3>
-                </div>
-    
-                <div class="user-settings relative w-full">
-                    <button class="settings-btn text-gray-600 hover:text-gray-800 focus:outline-none" aria-label="Abrir opciones de configuración" onclick="toggleDropdown('persona2-dropdown')">
-                        <i class="fa-solid fa-gear text-lg"></i>
-                    </button>
-                    <ul id="persona2-dropdown" class="dropdown-menu hidden bg-white shadow-lg rounded-lg mt-2 right-0 w-full py-2 z-20">
-                        <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Editar noticia</a></li>
-                        <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Editar història</a></li>
-                        <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Editar processos</a></li>
-                        <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Eliminar usuari</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    
-        <div class="add-user-section mt-10 text-center">
-            <button class="add-user-btn px-6 py-3 bg-purple-600 text-white rounded-full shadow-md hover:bg-purple-700 focus:outline-none" aria-label="Añadir nuevo usuario">
-                <i class="fa-solid fa-user-plus text-lg mr-2"></i> Afegir usuari
-            </button>
-        </div>
+        <div id="edit-users-container" class="user-list space-y-6 p-32"></div>
+
     </main>
     
     <!-- Script para manejar la apertura y cierre del menú desplegable -->
@@ -129,5 +110,12 @@
             dropdown.classList.toggle('absolute');
         }
     </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="./../js/script.js"></script>
+    <script src="../js/edit_users.js"></script>
+    <script src="../js/checkuser.js"></script>
+    <!-- <script src="../js/editUsers.js"></script> -->
 </body>
 </html>
