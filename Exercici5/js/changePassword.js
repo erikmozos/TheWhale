@@ -33,10 +33,9 @@ $(document).ready(function () {
             const updatedUser = users[userIndex];
             sessionStorage.setItem('user_logged_in', JSON.stringify(updatedUser));
 
-            alert("¡Contraseña actualizada con éxito!");
             window.location.href = "../pages/admin.html";
         } else {
-            alert("Usuario no encontrado en el sistema.");
+            console.error("Usuario no encontrado en el sistema.");
         }
     });
 });
@@ -44,15 +43,21 @@ $(document).ready(function () {
 function comparePassword() {
     const pass1 = $('#password').val();
     const pass2 = $('#confirmpassword').val();
+    const errorMessage = $('#error-message');
+
+    // Limpiar mensaje de error
+    errorMessage.hide();
 
     if (pass1 !== pass2 || pass1 === '') {
-        alert("Las contraseñas no coinciden o están vacías.");
+        errorMessage.text("Las contraseñas no coinccideixen o estan buides");
+        errorMessage.show();
         return null;
     }
 
     const isValidPassword = validatePassword(pass1);
     if (!isValidPassword) {
-        alert("La contraseña debe tener al menos 12 caracteres, incluyendo mayúsculas, minúsculas, números y caracteres especiales.");
+        errorMessage.text("La contrasenya ha de tenir al menys 12 caracters, amb majúscules, minúscules, nombres y caracteres especials.");
+        errorMessage.show();
         return null;
     }
 
