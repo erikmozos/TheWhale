@@ -1,0 +1,93 @@
+// alvoltantdelabalena.scss
+@import 'commons';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family-open-sans;
+    background-color: $background-color;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin-top: 80px;
+    min-height: 63vh;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.titol {
+    font-family: $font-family-lora; 
+    font-size: $font-size-titol; 
+    margin-bottom: 40px; 
+    color: $text-color; 
+}
+
+.contenidor-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 330px;
+    height: $card-height;
+    margin: 50px;
+    position: relative;
+    perspective: 1000px;
+    @include box-shadow(rgba(0, 0, 0, 0.2), 20px);
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, $primary-color, $background-color);
+    font-size: 20px;
+    font-weight: 500;
+    color: $text-color;
+    border-radius: 5px;
+}
+
+.proces, .historia {
+    background: linear-gradient(135deg, $primary-color, $background-color);
+}
+
+.card h3 {
+    font-family: $font-family-lora;
+    font-size: $font-size-h3;
+    color: $text-color;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .titol {
+        font-size: 28px; 
+    }
+
+    .portfolio-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .portfolio-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+@media (min-width: 769px) {
+    .portfolio-container {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+    .card{
+        width: $card-width;
+    }
+}
