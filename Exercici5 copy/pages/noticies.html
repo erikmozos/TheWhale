@@ -70,73 +70,10 @@
 
     <main class="px-4 py-4 mb-6">
         <h2 class="font-lora text-text text-center text-5xl mt-32 mb-6" aria-label="News section title">Notícies</h2>
-        <div class="grid-container">
-            <!-- Artículo 1 -->
-            <article class="col-span-1 lg:col-span-2 xl:col-span-2 card">
-                <img class="card-large-image" src="./noticies/img-noticies/ballena-cos-nou-puerto-mahon-portum.jpg" alt="News image 1" aria-label="Image related to news item 1">
-                <div class="card-content">
-                    <h3 class="card-heading">Un Gegant del Mar a Punta Prima: La Història del Rorqual Comú de 1912</h3>
-                    <p class="card-text">En el seu darrer número de maig de 2015, la revista <strong>PORTUM Maó</strong> va rememorar un esdeveniment únic ocorregut el desembre de 1912...</p>
-                    <a href="./noticies/noticia1.html"><button class="btn" aria-label="View news item 1">Veure noticia</button></a>
-                </div>
-            </article>
-    
-            <!-- Artículo 2 y 3 en grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <article class="card">
-                    <img class="card-image" src="./noticies/img-noticies/1.jpeg" alt="News image 2" aria-label="Image related to news item 2">
-                    <div class="card-content">
-                        <h3 class="card-subheading">Una balena històrica de 15 metres per al ‘Ramis'</h3>
-                        <p class="card-text">L'esquelet del cetaci serà exposat en el museu de l'institut de Maó</p>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut neque ac erat convallis scelerisque.</p>
-                        <a href="./noticies/noticia2.html"><button class="btn" aria-label="View news item 3">Veure noticia</button></a>
-                    </div>
-                </article>
-    
-                <article class="card">
-                    <img class="card-image" src="../img/konstantin-ignatovich-so4abxwHBW0-unsplash.jpg" alt="News image 3" aria-label="Image related to news item 3">
-                    <div class="card-content">
-                        <h3 class="card-subheading">Notícia 3</h3>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut neque ac erat convallis scelerisque.</p>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut neque ac erat convallis scelerisque.</p>
-                        <a href="./noticies/noticia2.html"><button class="btn" aria-label="View news item 3">Veure noticia</button></a>
-                    </div>
-                </article>
-            </div>
-    
-            <!-- Artículo 4 y 5 en grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <article class="card">
-                    <img class="card-image" src="../img/7abd9842-8954-4ac5-bf17-ab276419a032_16-9-aspect-ratio_default_0.jpg" alt="News image 4" aria-label="Image related to news item 4">
-                    <div class="card-content">
-                        <h3 class="card-subheading">Notícia 4</h3>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut neque ac erat convallis scelerisque.</p>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut neque ac erat convallis scelerisque.</p>
-                        <button class="btn" aria-label="View news item 4">Veure noticia</button>
-                    </div>
-                </article>
-    
-                <article class="card">
-                    <img class="card-image" src="../img/rbuybxvkkjl7n5vp7ylpw3rs2y_2000.webp" alt="News image 5" aria-label="Image related to news item 5">
-                    <div class="card-content">
-                        <h3 class="card-subheading">Notícia 5</h3>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut neque ac erat convallis scelerisque.</p>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut neque ac erat convallis scelerisque.</p>
-                        <button class="btn" aria-label="View news item 5">Veure noticia</button>
-                    </div>
-                </article>
-            </div>
-    
-            <!-- Artículo 6 -->
-            <article class="col-span-1 lg:col-span-2 xl:col-span-2 card">
-                <img class="card-large-image" src="../img/Menorca.jpg" alt="News image 6" aria-label="Image related to news item 6">
-                <div class="card-content">
-                    <h3 class="card-heading">Notícia 6</h3>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut neque ac erat convallis scelerisque.</p>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut neque ac erat convallis scelerisque.</p>
-                    <button class="mt-10 btn" aria-label="View news item 6">Veure noticia</button>
-                </div>
-            </article>
+        <a href="./creadorNoticies.html">
+            <button class="btn bg-yellow-500 text-white py-2 px-4 rounded-md">Crear Notícia</button>
+        </a>
+            <div class="grid-container align-center" id="contenedor-noticias">
         </div>
     </main>
     
@@ -158,7 +95,6 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="../js/script.js"></script>
     <script src="../js/checkuser.js"></script>
-
-    
+    <script src="../js/noticies.js"></script>
 </body>
 </html>
