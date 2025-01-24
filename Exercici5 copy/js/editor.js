@@ -11,11 +11,9 @@ $(function() {
       drop: function(event, ui) {
         const type = ui.draggable.data("type");
         if ($(this).children().length >= 2 && $(this).hasClass("half")) {
-          alert("Solo se permiten dos elementos por columna.");
           return;
         }
         if ($(this).children().length >= 1 && !$(this).hasClass("half")) {
-          alert("Solo se permite un elemento en esta columna.");
           return;
         }
 
@@ -124,12 +122,71 @@ $(function() {
     }
 
     localStorage.setItem("whaleNews", JSON.stringify(storedNews));
-    alert("Configuración guardada en el navegador.");
   });
 
+  // Guardar como borrador
+  $("#save-draft").on("click", function() {
+    const rows = [];
+    $(".row").each(function() {
+      const row = [];
+      $(this).find(".column").each(function() {
+        const column = [];
+        $(this).children(".element").each(function() {
+          if ($(this).find("p").length) {
+            column.push({
+              type: "paragraph",
+              content: $(this).find("p").text()
+            });
+          } else if ($(this).find("img").length) {
+            column.push({
+              type: "image",
+              src: $(this).find("img").attr("src")
+            });
+          }
+        });
+        row.push(column);
+      });
+      rows.push(row);
+    });
 
+    let storedNews = JSON.parse(localStorage.getItem("whaleNews")) ?? [];
+    const urlParams = new URLSearchParams(window.location.search);
+    const newsId = urlParams.get("id");
+    let existingNews = storedNews.find(news => news.id == newsId);
 
-  $("#publicarNoticia").on("click", ()=>{
+    if (existingNews) {
+      // Update existing news
+      existingNews.titol = $("#newsTitle").val();
+      existingNews.rows = rows;
+      existingNews.status = 0; // Set status to draft
+    } else {
+      // Create new news
+      const newsCount = storedNews.length;
+      const newNews = {
+        id: newsCount + 1,
+        titol: $("#newsTitle").val(),
+        autor: "Peri",
+        date: dataDeAvui(),
+        rows: rows,
+        status: 0
+      };
+      storedNews.unshift(newNews);
+    }
+
+    localStorage.setItem("whaleNews", JSON.stringify(storedNews));
+  });
+
+  // Eliminar noticia
+  $("#delete-news").on("click", function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const newsId = urlParams.get("id");
+    let storedNews = JSON.parse(localStorage.getItem("whaleNews")) ?? [];
+    storedNews = storedNews.filter(news => news.id != newsId);
+    localStorage.setItem("whaleNews", JSON.stringify(storedNews));
+    window.location.href = "./index.html"; // Redirect to home page after deletion
+  });
+
+  $("#publicarNoticia").on("click", ()=> {
     const rows = [];
     $(".row").each(function() {
       const row = [];
@@ -167,14 +224,11 @@ $(function() {
 
     whaleNews.unshift(config);
     localStorage.setItem("whaleNews", JSON.stringify(whaleNews));
-    alert("Configuración guardada en el navegador.");
   });
-  
 
   $("#load-config").on("click", function() {
     const config = localStorage.getItem("postBuilderConfig");
     if (!config) {
-      alert("No hay configuración guardada.");
       return;
     }
 
@@ -337,7 +391,6 @@ $(document).ready(() => {
     if (index !== -1) {
       whaleNews[index] = updatedNews;
       localStorage.setItem("whaleNews", JSON.stringify(whaleNews));
-      alert("Noticia actualizada correctamente.");
     }
   });
 
@@ -346,9 +399,6 @@ $(document).ready(() => {
     if (index !== -1) {
       whaleNews[index].status = 1; // Cambiar el estado a "publicada"
       localStorage.setItem("whaleNews", JSON.stringify(whaleNews));
-      alert("Noticia publicada correctamente.");
-    } else {
-      alert("Error: no se encontró la noticia.");
     }
   });
 });

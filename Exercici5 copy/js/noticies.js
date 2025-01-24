@@ -44,11 +44,11 @@ $(() => {
                                 ${generateNewsContent(newsItem.rows)}           
                             </div>
                             <div class="flex justify-between mt-4">
-                                <!-- Añadimos el id como parámetro en la URL -->
                                 <a href="./dins_noticia.html?id=${newsItem.id}"><button class="btn bg-blue-500 text-white py-2 px-4 rounded-md">Llegir Mes</button></a>
                                 <a href="./creadorNoticies.html?id=${newsItem.id}">
                                 <button class="btn bg-yellow-500 text-white py-2 px-4 rounded-md">Editar noticia</button>
                                 </a>
+                                <button class="btn bg-red-500 text-white py-2 px-4 rounded-md delete-news-btn" data-id="${newsItem.id}">Eliminar noticia</button>
                             </div>  
                         </div>
                         <div class="flex justify-between text-lg items-center p-4">
@@ -59,6 +59,15 @@ $(() => {
 
                 $("#contenedor-noticias").append(newsHtml);
             }
+        });
+
+        // Add event listener for delete buttons
+        $(".delete-news-btn").on("click", function() {
+            const newsId = $(this).data("id");
+            storedNews = storedNews.filter(news => news.id != newsId);
+            localStorage.setItem("whaleNews", JSON.stringify(storedNews));
+            $(`#${newsId}`).remove();
+            alert("Noticia eliminada correctamente.");
         });
     } else {
         console.log("storedNews empty");
