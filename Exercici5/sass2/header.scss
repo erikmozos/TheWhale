@@ -1,0 +1,133 @@
+@import 'variables';
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $background-color;
+    box-shadow: 0 6px 15px $box-shadow-color;
+    width: 100%;
+    padding: 10px;
+    height: $header-height;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+header i {
+    padding-top: 15px;
+}
+
+.logo-img {
+    width: 50px;
+}
+
+.mobile-navbar {
+    display: block;
+    position: absolute;
+    background-color: $white-color;
+    width: 100%;
+    left: 0;
+    top: 60px;
+    border: 1px solid $border-color;
+    display: none;
+    box-shadow: 0 6px 15px $box-shadow-color;
+}
+
+.mobile-navbar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.mobile-navbar li {
+    padding: 10px;
+    border-bottom: 1px solid $border-color;
+}
+
+.mobile-navbar a {
+    text-decoration: none;
+    background: linear-gradient(90deg, $primary-color, $secondary-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 5px;
+    font-weight: bold;
+}
+
+#menu-icon {
+    cursor: pointer;
+}
+
+@media (max-width: 1249px) {
+    .mobile-navbar.show {
+        display: block;
+    }
+}
+
+.navbar {
+    display: none;
+}
+
+@media (min-width: 1250px) {
+    header {
+        padding: 0 !important;
+        display: grid !important;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 10fr 1fr;
+        grid-template-areas: "logo navbar search";
+        background-color: $background-color;
+        box-shadow: 0 4px 8px $box-shadow-light-color;
+        position: fixed;
+        top: 0;
+    }
+    
+    #menu-icon {
+        display: none;
+    }
+    
+    .logo-img {
+        display: grid;
+        grid-area: "logo";
+        justify-self: center;
+        width: 65px;
+    }
+    
+    .navbar {
+        display: grid;
+        grid-area: "navbar";
+        width: 100%;
+    }
+
+    .navbar ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+    }
+
+    .navbar ul li {
+        padding: 20px;
+    }
+
+    .navbar ul li a {
+        text-decoration: none;
+        background: linear-gradient(90deg, $primary-color, $secondary-color);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding: 5px;
+        font-weight: bold;
+    }
+
+    .navbar ul li a:hover {
+        background: linear-gradient(90deg, $secondary-color, $primary-color);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-decoration: underline;
+    }
+    
+    .mobile-navbar {
+        display: none;
+    }
+
+    .fa-magnifying-glass {
+        grid-area: "search";
+    }
+}

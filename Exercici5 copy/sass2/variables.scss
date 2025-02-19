@@ -1,0 +1,56 @@
+// variables.scss
+
+// Colors
+$background-color: #F1F1F1;
+$text-color: #595959;
+$primary-color: #7BE0AD;
+$secondary-color: #559D7E;
+$white-color: #FFFFFF;
+$black-color: #000000;
+$border-color: #ccc;
+$box-shadow-color: rgba(0, 0, 0, 0.3);
+$box-shadow-light-color: rgba(0, 0, 0, 0.1);
+
+// Fonts
+$font-family-open-sans: 'Open Sans', sans-serif;
+$font-family-lora: 'Lora', serif;
+$font-family-montserrat: 'Montserrat', sans-serif;
+
+// Font Sizes
+$font-size-h1: 40px;
+$font-size-h2: 33px;
+$font-size-h3: 26px;
+$font-size-h4: 22px;
+$font-size-p: 16px;
+$font-size-titol: 36px;
+$font-size-redirect: 18px;
+
+// Other
+$header-height: 90px;
+$card-width: 500px;
+$card-height: 450px;
+$login-container-width: 300px;
+
+@mixin box-shadow($color, $blur) {
+    box-shadow: 0 4px $blur $color;
+}
+
+@mixin border-radius($radius) {
+    border-radius: $radius;
+}
+
+@mixin transition($property, $duration) {
+    transition: $property $duration ease;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin text-style($font-family, $font-size, $color) {
+    font-family: $font-family;
+    font-size: $font-size;
+    color: $color;
+}

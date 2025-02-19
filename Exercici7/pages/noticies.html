@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../sass2/commons.css">
+    <link rel="stylesheet" href="../assets/libreries/fontawesome-free-6.6.0-web/fontawesome-free-6.6.0-web/css/all.min.css">
+    <link rel="stylesheet" href="../../src/output.css">
+    <title>Noticies</title>
+</head>
+<body>
+    <header>
+        <i id="menu-icon" class="fa-solid fa-bars" aria-label="Open menu" role="button" tabindex="0"></i>
+        <img class="logo-img" src="../img/logo_aula_museu-removebg-preview.png" alt="Logo of TheWale" />
+        <nav class="mobile-navbar" aria-label="Mobile navigation">
+            <ul>
+                <li><i class="fa-solid fa-house" aria-hidden="true"></i> <a href="../index.html" aria-label="Home page">Inici</a></li>
+                <li><i class="fa-solid fa-water" aria-hidden="true"></i> <a href="alvoltantdelabalena.html" aria-label="About the whale">Al voltant de la balena</a></li>
+                <li><i class="fa-solid fa-puzzle-piece" aria-hidden="true"></i> <a href="portfolio.html" aria-label="Portfolio">Muntatge</a></li>
+                <li><i class="fa-solid fa-building-columns" aria-hidden="true"></i> <a href="#" aria-label="History">Història</a></li>
+                <li><i class="fa-solid fa-newspaper" aria-hidden="true"></i> <a href="../pages/noticies.html" aria-label="News">Notícies</a></li>
+                <li><i class="fa-solid fa-user" aria-hidden="true"></i> <a href="logIn.html" aria-label="Log in" id="login-link">Log In</a></li>
+            </ul>
+        </nav>
+        <nav class="navbar" aria-label="Primary navigation">
+            <ul>
+                <li><i class="fa-solid fa-house" aria-hidden="true"></i> <a href="../index.html" aria-label="Home page">Inici</a></li>
+                <li><i class="fa-solid fa-water" aria-hidden="true"></i> <a href="alvoltantdelabalena.html" aria-label="About the whale">Al voltant de la balena</a></li>
+                <li><i class="fa-solid fa-puzzle-piece" aria-hidden="true"></i> <a href="portfolio.html" aria-label="Portfolio">Muntatge</a></li>
+                <li><i class="fa-solid fa-building-columns" aria-hidden="true"></i> <a href="#" aria-label="History">Història</a></li>
+                <li><i class="fa-solid fa-newspaper" aria-hidden="true"></i> <a href="../pages/noticies.html" aria-label="News">Notícies</a></li>
+                <li><i class="fa-solid fa-user" aria-hidden="true"></i> <a href="logIn.html" aria-label="Log in" id="login-link-desktop">Log In</a></li>
+            </ul>
+        </nav>
+        <i class="fa-solid fa-magnifying-glass" id="search-icon" aria-label="Search icon" role="button" tabindex="0"></i>
+        <input type="text" id="search-input" placeholder="Buscar..." aria-label="Search input" style="display: none;">
+    </header>
+
+    <aside>
+        <button id="accessibility-btn" aria-label="Opcions d'accessibilitat">Accessibilitat</button>
+    
+        <section id="accessibility-menu">
+            <h2>Opcions d'accessibilitat</h2>
+            
+            <!-- Opcions de contrast -->
+            <label for="contrast">Contrast:</label> 
+            <select id="contrast" aria-label="Selecciona una opció de contrast">
+                <option value="normal">Normal</option>
+                <option value="grayscale">Escala de grisos</option>
+                <option value="dark">Contrast fosc</option>
+                <option value="light">Contrast clar</option>
+                <option value="high-saturation">Alta saturació</option>
+                <option value="low-saturation">Baixa saturació</option>
+            </select>
+    
+            <!-- Configuració de la font -->
+            <label for="font-size">Mida de la font:</label>
+            <input type="range" id="font-size" min="1" max="3" step="0.1" value="1" aria-label="Ajusta la mida de la font">
+            
+            <label for="line-spacing">Espaiat de línia:</label>
+            <input type="range" id="line-spacing" min="1" max="3" step="0.1" value="1.5" aria-label="Ajusta l'espaiat de línia">
+    
+            <label for="word-spacing">Espaiat de paraules:</label>
+            <input type="range" id="word-spacing" min="0" max="1" step="0.1" value="0" aria-label="Ajusta l'espaiat de paraules">
+    
+            <label for="letter-spacing">Espaiat de lletres:</label>
+            <input type="range" id="letter-spacing" min="0" max="1" step="0.1" value="0" aria-label="Ajusta l'espaiat de lletres">
+        </section>
+    </aside>
+
+    <main class="px-4 py-4 mb-6">
+        <h2 class="font-lora text-text text-center text-5xl mt-32 mb-6" aria-label="News section title">Notícies</h2>
+        <a href="./creadorNoticies.html">
+            <button class="btn bg-yellow-500 text-white py-2 px-4 rounded-md">Crear Notícia</button>
+        </a>
+            <div class="grid-container align-center" id="contenedor-noticias">
+        </div>
+    </main>
+    
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 TheWale. All rights reserved to Erik Mozos.</p>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook" title="Visit our Facebook page"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter" title="Visit our Twitter profile"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram" title="Visit our Instagram profile"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" title="Visit our LinkedIn profile"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <p>Contacte: <a href="mailto:emozosm20214@iesjoanramis.org" aria-label="Email Erik Mozos">emozosm20214@iesjoanramis.org</a></p>
+            <p>Visita la nostra pàgina web del institut: <a href="http://www.iesjoanramis.org" target="_blank" aria-label="IES Joan Ramis website">www.iesjoanramis.org</a>.</p>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+    <script type="module" src="../js/checkuser.js"></script>
+    <script src="../js/noticies.js"></script>
+</body>
+</html>
