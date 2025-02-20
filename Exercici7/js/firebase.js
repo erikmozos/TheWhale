@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
-import { getFirestore, doc, getDoc, getDocs, setDoc, collection } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore.js";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/11.3.0/firebase-auth.js';
+import { getFirestore, doc, getDoc, getDocs, setDoc, collection, updateDoc } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged, updatePassword } from 'https://www.gstatic.com/firebasejs/11.3.0/firebase-auth.js';
 // Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyA4c4JNdlYUxpklB9HrxvlGPPS4REiMhvc",
@@ -20,7 +20,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-export { auth, db, signOut, onAuthStateChanged };
+export { auth, db, signOut, onAuthStateChanged, doc, updateDoc, updatePassword };
 
 // Crear usuari per defecte
 export async function createDefaultUser() {
@@ -67,7 +67,7 @@ export const userLogIn = async (email, password) => {
       console.log(userDoc.data().is_first_login);
 
       if(userDoc.data().is_first_login){
-          //AQUI FALTA
+          window.location.href = "../pages/logIn-changePassword.html"
       }
       return userData;
     } else {
@@ -99,3 +99,28 @@ export const getUsers = async () => {
     return []; 
   }
 };
+
+
+export const changeUserPassword = async (newPassword) => {
+  try {
+    const user = auth.currentUser; // Obtener usuario autenticado
+    if (!user) throw new Error("No hay usuario autenticado");
+
+    // Actualizar contraseña en Firebase Authentication
+    await updatePassword(user, newPassword);
+
+    // Actualizar Firestore para marcar que ya no es el primer inicio de sesión
+    const userDocRef = doc(db, "users", user.uid);
+    await updateDoc(userDocRef, {
+      is_first_login: false
+    });
+
+    console.log("Contraseña actualizada correctamente.");
+    alert("Tu contraseña ha sido actualizada con éxito.");
+    window.location.href = "../index.html"; // Redirigir al usuario tras el cambio
+  } catch (error) {
+    console.error("Error al cambiar la contraseña:", error.message);
+    alert("Error al cambiar la contraseña: " + error.message);
+  }
+};
+

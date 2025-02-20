@@ -23,6 +23,7 @@ $(document).ready(function () {
       $('header nav ul li:nth-child(6) > a').html("Logout");
 
       // Mostrar "Admin Panel" si el usuario es admin
+  
       if (userData?.role === "admin") {
         $('header nav ul').append('<li><a href="admin.html">Admin Panel</a></li>');
       }
@@ -32,7 +33,7 @@ $(document).ready(function () {
         e.preventDefault();
         signOut(auth).then(() => {
           localStorage.removeItem("user");
-          window.location.href = "login.html";
+          // window.location.href = "login.html";
         }).catch((error) => {
           console.error("Error al cerrar sesión:", error);
         });
