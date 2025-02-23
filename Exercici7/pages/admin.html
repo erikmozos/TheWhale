@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../sass2/commons.css">
     <link rel="stylesheet" href="../assets/libreries/fontawesome-free-6.6.0-web/fontawesome-free-6.6.0-web/css/all.min.css">
     <link rel="stylesheet" href="../../src/output.css">
-    <title>Admin</title>
+    <title>Admin Panel - WHALE</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-100">
+    <!-- Header -->
     <header>
         <i id="menu-icon" class="fa-solid fa-bars" aria-label="Open menu" role="button" tabindex="0"></i>
         <img class="logo-img" src="../img/logo_aula_museu-removebg-preview.png" alt="Logo of TheWale" />
@@ -36,50 +39,45 @@
         <input type="text" id="search-input" placeholder="Buscar..." aria-label="Search input" style="display: none;">
     </header>
 
-    <aside>
-        <button id="accessibility-btn" aria-label="Opcions d'accessibilitat">Accessibilitat</button>
-    
-        <section id="accessibility-menu">
-            <h2>Opcions d'accessibilitat</h2>
-            
-            <!-- Opcions de contrast -->
-            <label for="contrast">Contrast:</label> 
-            <select id="contrast" aria-label="Selecciona una opció de contrast">
-                <option value="normal">Normal</option>
-                <option value="grayscale">Escala de grisos</option>
-                <option value="dark">Contrast fosc</option>
-                <option value="light">Contrast clar</option>
-                <option value="high-saturation">Alta saturació</option>
-                <option value="low-saturation">Baixa saturació</option>
-            </select>
-    
-            <!-- Configuració de la font -->
-            <label for="font-size">Mida de la font:</label>
-            <input type="range" id="font-size" min="1" max="3" step="0.1" value="1" aria-label="Ajusta la mida de la font">
-            
-            <label for="line-spacing">Espaiat de línia:</label>
-            <input type="range" id="line-spacing" min="1" max="3" step="0.1" value="1.5" aria-label="Ajusta l'espaiat de línia">
-    
-            <label for="word-spacing">Espaiat de paraules:</label>
-            <input type="range" id="word-spacing" min="0" max="1" step="0.1" value="0" aria-label="Ajusta l'espaiat de paraules">
-    
-            <label for="letter-spacing">Espaiat de lletres:</label>
-            <input type="range" id="letter-spacing" min="0" max="1" step="0.1" value="0" aria-label="Ajusta l'espaiat de lletres">
-        </section>
-    </aside>
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-center mb-8">Panel de Administración</h1>
 
-    <main class="px-4 py-4 mb-6">
-        <h2 class="font-lora text-center text-5xl mt-32 mb-6">Admin</h2>
-    
-        <div id="edit-users-container" class="user-list space-y-6 p-32"></div>
+        <!-- Formulario de creación de usuarios -->
+        <div class="flex justify-center mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-md w-96">
+                <h3 class="text-xl font-bold mb-4 text-center">Crear Nuevos Usuarios</h3>
+                <form id="createUsersForm" class="space-y-4">
+                    <div>
+                        <label for="numUsers" class="block text-sm font-medium text-gray-700">Número de usuarios</label>
+                        <input type="number" id="numUsers" name="numUsers" min="1" required
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="defaultPassword" class="block text-sm font-medium text-gray-700">Contraseña por defecto</label>
+                        <input type="text" id="defaultPassword" name="defaultPassword" value="Ramis.2024" required
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                    </div>
+                    <div id="emailInputsContainer" class="space-y-2">
+                        <!-- Aquí se generarán dinámicamente los inputs de email -->
+                    </div>
+                    <button type="button" id="generateInputs" 
+                        class="w-full bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 mb-2">
+                        Generar campos de email
+                    </button>
+                    <button type="submit"
+                        class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                        Crear Usuarios
+                    </button>
+                </form>
+            </div>
+        </div>
 
+        <!-- Contenedor de la lista de usuarios -->
+        <div id="edit-users-container" class="bg-white rounded-lg shadow-md p-6"></div>
     </main>
-    
-    <!-- Script para manejar la apertura y cierre del menú desplegable -->
-    
-    
 
-
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <p>&copy; 2024 TheWale. All rights reserved to Erik Mozos.</p>
@@ -90,31 +88,14 @@
                 <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" title="Visit our LinkedIn profile"><i class="fa-brands fa-linkedin"></i></a>
             </div>
             <p>Contacte: <a href="mailto:emozosm20214@iesjoanramis.org" aria-label="Email Erik Mozos">emozosm20214@iesjoanramis.org</a></p>
-            <p>Visita la nostra pàgina web del institut: <a href="http://www.iesjoanramis.org" target="_blank" aria-label="IES Joan Ramis website">www.iesjoanramis.org</a>.</p>
+            <p>Visita la nostra pàgina web del institut: <a href="http://www.iesjoanramis.org" target="_blank" aria-label="IES Joan Ramis website">www.iesjoanramis.org</a></p>
         </div>
     </footer>
 
-    <script>
-        function toggleDropdown(id) {
-            // Cerrar todos los menús desplegables
-            const allDropdowns = document.querySelectorAll('.dropdown-menu');
-            allDropdowns.forEach(function(dropdown) {
-                if (dropdown.id !== id) {
-                    dropdown.classList.add('hidden');
-                }
-            });
-    
-            // Alternar el menú desplegable de la persona seleccionada
-            const dropdown = document.getElementById(id);
-            dropdown.classList.toggle('hidden');
-            dropdown.classList.toggle('absolute');
-        }
-    </script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script src="./../js/script.js"></script>
-    <script src="../js/edit_users.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="./../js/script.js"></script>
+    <script type="module" src="../js/edit_users.js"></script>
     <script type="module" src="../js/checkuser.js"></script>
 </body>
 </html>

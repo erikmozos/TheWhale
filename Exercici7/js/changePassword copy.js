@@ -63,11 +63,3 @@ function comparePassword() {
     return pass1;
 }
 
-function validatePassword(password) {
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,}$/;
-    return passwordRegex.test(password);
-}
-
-function generateSalt() {
-    return CryptoJS.lib.WordArray.random(128 / 8).toString();
-}
