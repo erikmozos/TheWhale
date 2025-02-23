@@ -31,14 +31,14 @@ $(document).ready(async function () {
             await updateDoc(userDocRef, { is_first_login: false });
 
             console.log("Contraseña actualizada correctamente.");
-            alert("Tu contraseña ha sido actualizada con éxito.");
+            alert("Contrasenya actualizada");
             
             // Redirigir al usuario después del cambio de contraseña
             window.location.href = "../index.html"; 
 
         } catch (error) {
             console.error("Error al cambiar la contraseña:", error.message);
-            alert("Error al cambiar la contraseña: " + error.message);
+            alert("Error al cambiar la contrasenya: " + error.message);
         }
     });
 });
@@ -65,10 +65,9 @@ function comparePassword() {
     return pass1;
 }
 
-<<<<<<< HEAD
-=======
+
 function validatePassword(password) {
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,}$/;
     return passwordRegex.test(password);
 }
->>>>>>> bf738943d7669cf1a802274c5e4612b70dd1e062
+

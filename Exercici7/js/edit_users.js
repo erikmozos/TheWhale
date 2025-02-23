@@ -1,48 +1,57 @@
 import { createUser, getUsers, deleteUser, updateUser } from './firebase.js';
 
 $(document).ready(async function () {
+
+    const currentUser = JSON.parse(localStorage.getItem('user'));
+    if (!currentUser || (!currentUser.edit_users && currentUser.role !== 'admin')) {
+        window.location.href = '../index.html';
+        return;
+    }
     // Cargar usuarios iniciales
     let users = await getUsers() || [];
 
     function renderUsers(usersList) {
+        // Contenedor responsive para la tabla
+        const tableWrapper = $("<div>").addClass(
+            "w-full overflow-x-auto rounded-lg shadow-md"
+        );
+        
         const table = $("<table>").addClass(
-            "min-w-full bg-white border-collapse rounded-lg shadow-md overflow-hidden"
+            "min-w-full bg-white border-collapse"
         );
         
         const headerRow = `
             <thead>
                 <tr class="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
-                    <th class="py-3 px-6 text-left">ID</th>
-                    <th class="py-3 px-6 text-left">Nom</th>
-                    <th class="py-3 px-6 text-left">Email</th>
-                    <th class="py-3 px-6 text-center">Editar Noticies</th>
-                    <th class="py-3 px-6 text-center">Editar Usuaris</th>
-                    <th class="py-3 px-6 text-center">Editar Arxius</th>
-                    <th class="py-3 px-6 text-center">Editar</th>
-                    <th class="py-3 px-6 text-center">Eliminar</th>
+                    <th class="py-3 px-4 text-left whitespace-nowrap">Nom</th>
+                    <th class="py-3 px-4 text-left whitespace-nowrap">Email</th>
+                    <th class="py-3 px-4 text-center whitespace-nowrap">Editar Noticies</th>
+                    <th class="py-3 px-4 text-center whitespace-nowrap">Editar Usuaris</th>
+                    <th class="py-3 px-4 text-center whitespace-nowrap">Editar Arxius</th>
+                    <th class="py-3 px-4 text-center whitespace-nowrap">Editar</th>
+                    <th class="py-3 px-4 text-center whitespace-nowrap">Eliminar</th>
                 </tr>
             </thead>`;
         table.append(headerRow);
-
+    
         const tbody = $("<tbody>");
         usersList.forEach((user) => {
             const isAdmin = user.name.toLowerCase() === "admin";
             const row = `
                 <tr class="border-b border-gray-200 hover:bg-gray-100">
-                    <td class="py-3 px-6 text-left">${user.id}</td>
-                    <td class="py-3 px-6 text-left">${user.name}</td>
-                    <td class="py-3 px-6 text-left">${user.email}</td>
-                    <td class="py-3 px-6 text-center">${user.edit_news ? "✅" : "❌"}</td>
-                    <td class="py-3 px-6 text-center">${user.edit_users ? "✅" : "❌"}</td>
-                    <td class="py-3 px-6 text-center">${user.edit_bone_files ? "✅" : "❌"}</td>
-                    <td class="py-3 px-6 text-center">
+                    <td class="py-3 px-4 text-left whitespace-nowrap">${user.name}</td>
+                    <td class="py-3 px-4 text-left whitespace-nowrap">${user.email}</td>
+                    <td class="py-3 px-4 text-center whitespace-nowrap">${user.edit_news ? "✅" : "❌"}</td>
+                    <td class="py-3 px-4 text-center whitespace-nowrap">${user.edit_users ? "✅" : "❌"}</td>
+                    <td class="py-3 px-4 text-center whitespace-nowrap">${user.edit_bone_files ? "✅" : "❌"}</td>
+                    <td class="py-3 px-4 text-center whitespace-nowrap">
                         <button class="edit-user-btn bg-yellow-500 text-white py-1 px-3 rounded-full text-sm hover:bg-yellow-600" data-id="${user.id}">
                             Editar
                         </button>
                     </td>
-                    <td class="py-3 px-6 text-center">
+                    <td class="py-3 px-4 text-center whitespace-nowrap">
                         ${isAdmin 
-                            ? '<span class="text-gray-400 italic">No permitido</span>'
+                            ? '<span class="text-gray-400 italic">No permés</span>'
                             : `<button class="delete-user-btn bg-red-500 text-white py-1 px-3 rounded-full text-sm hover:bg-red-600" data-id="${user.id}">
                                 Eliminar
                                </button>`
@@ -51,12 +60,12 @@ $(document).ready(async function () {
                 </tr>`;
             tbody.append(row);
         });
-
+    
         table.append(tbody);
-        $("#edit-users-container").empty().append(table);
+        tableWrapper.append(table);
+        $("#edit-users-container").empty().append(tableWrapper);
     }
 
-    // Generar inputs de email dinámicamente
     $('#generateInputs').on('click', function() {
         const numUsers = parseInt($('#numUsers').val());
         const container = $('#emailInputsContainer');
@@ -66,36 +75,34 @@ $(document).ready(async function () {
             for (let i = 1; i <= numUsers; i++) {
                 container.append(`
                     <div class="email-input-group mb-4">
-                        <label for="email${i}" class="block text-sm font-medium text-gray-700">Email usuario ${i}</label>
+                        <label for="email${i}" class="block text-sm font-medium text-gray-700">Email usuari ${i}</label>
                         <input type="email" 
                                id="email${i}" 
                                name="email${i}" 
                                required
                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                               placeholder="ejemplo@iesjoanramis.org">
+                               placeholder="exemple@iesjoanramis.org">
                     </div>
                 `);
             }
         } else {
-            alert('Por favor, introduce un número válido de usuarios');
+            alert('Introduir nombre d\'usuaris');
         }
     });
 
-    // Crear usuarios
     $('#createUsersForm').on('submit', async function(e) {
         e.preventDefault();
         
         const defaultPassword = $('#defaultPassword').val();
         const emails = [];
     
-        // Recoger todos los emails válidos
         $('.email-input-group input[type="email"]').each(function() {
             const email = $(this).val().trim();
             if (email) emails.push(email);
         });
     
         if (emails.length === 0) {
-            alert('Por favor, introduce al menos un email válido');
+            alert('Introduir email vàlid');
             return;
         }
     
@@ -126,7 +133,7 @@ $(document).ready(async function () {
             renderUsers(users);
         } catch (error) {
             console.error('Error al crear usuarios:', error);
-            alert('Error al crear usuarios: ' + error.message);
+            alert('Error al crear usuaris: ' + error.message);
         }
     });
 
@@ -141,7 +148,7 @@ $(document).ready(async function () {
         const editForm = `
             <div id="editUserForm" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center">
                 <div class="bg-white p-6 rounded-lg shadow-xl w-96">
-                    <h3 class="text-xl font-bold mb-4">Editar Usuario</h3>
+                    <h3 class="text-xl font-bold mb-4">Editar Usuari</h3>
                     <form class="space-y-4">
                         <div>
                             <label class="block text-sm font-medium text-gray-700">Nombre</label>
@@ -153,15 +160,15 @@ $(document).ready(async function () {
                             <div class="space-y-2">
                                 <div>
                                     <input type="checkbox" id="editNews" ${user.edit_news ? 'checked' : ''}>
-                                    <label>Editar Noticias</label>
+                                    <label>Editar Notícies</label>
                                 </div>
                                 <div>
                                     <input type="checkbox" id="editUsers" ${user.edit_users ? 'checked' : ''}>
-                                    <label>Editar Usuarios</label>
+                                    <label>Editar Usuaris</label>
                                 </div>
                                 <div>
                                     <input type="checkbox" id="editFiles" ${user.edit_bone_files ? 'checked' : ''}>
-                                    <label>Editar Archivos</label>
+                                    <label>Editar Arxius</label>
                                 </div>
                             </div>
                         </div>
@@ -195,10 +202,10 @@ $(document).ready(async function () {
                 users = await getUsers();
                 renderUsers(users);
                 $('#editUserForm').remove();
-                alert('Usuario actualizado correctamente');
+                alert('Usuari actualizat correctament');
             } catch (error) {
                 console.error('Error al actualizar usuario:', error);
-                alert('Error al actualizar usuario: ' + error.message);
+                alert('Error al actualizar usuari: ' + error.message);
             }
         });
 
@@ -216,10 +223,10 @@ $(document).ready(async function () {
                 await deleteUser(userId);
                 users = await getUsers();
                 renderUsers(users);
-                alert('Usuario eliminado correctamente');
+                alert('Usuari eliminat correctament');
             } catch (error) {
                 console.error('Error al eliminar usuario:', error);
-                alert('Error al eliminar usuario: ' + error.message);
+                alert('Error al eliminar usuari: ' + error.message);
             }
         }
     });
