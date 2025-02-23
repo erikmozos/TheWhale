@@ -1,13 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
-import { getFirestore, 
-  doc, 
-  getDoc, 
-  getDocs, 
-  setDoc, 
-  updateDoc,
-  deleteDoc, 
-  collection  } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore.js";
+import { getFirestore, doc, getDoc, getDocs, setDoc, collection } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore.js";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/11.3.0/firebase-auth.js';
 // Firebase configuration
 const firebaseConfig = {
@@ -27,7 +20,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-export { auth, db, signOut, onAuthStateChanged };
+export { auth, db, signOut, onAuthStateChanged, doc, updateDoc, updatePassword };
 
 // Crear usuari per defecte
 export async function createDefaultUser() {
@@ -190,4 +183,4 @@ export async function updateUser(userId, userData) {
       console.error("Error al actualizar usuario:", error);
       throw error;
   }
-}
+};

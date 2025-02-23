@@ -1,41 +1,44 @@
-$(document).ready(function () {
-    const userLoggedIn = JSON.parse(sessionStorage.getItem('user_logged_in')) || JSON.parse(localStorage.getItem('user_logged_in'));
+import { updatePassword } from "./firebase.js";
+import { doc, updateDoc } from "./firebase.js";
+import { auth, db } from "./firebase.js";
 
-    if (userLoggedIn) {
-        console.log('User is logged in:', userLoggedIn);
-    } else {
-        console.log('User is not logged in');
-        window.location.href = "../login.html";
-        return; 
+$(document).ready(async function () {
+    const userLoggedIn = JSON.parse(sessionStorage.getItem('user_logged_in')) || JSON.parse(localStorage.getItem('user'));
+
+    if (!userLoggedIn) {
+        console.log('Usuario no autenticado, redirigiendo...');
+        window.location.href = "../pages/logIn.html";
+        return;
     }
 
-    $('#changeButton').click((e) => {
+    console.log('Usuario autenticado:', userLoggedIn);
+
+    $('#changeButton').click(async (e) => {
         e.preventDefault();
 
         const newPassword = comparePassword();
-        if (!newPassword) {
-            return;
-        }
+        if (!newPassword) return; // Si la validación falla, se detiene aquí.
 
-        const salt = generateSalt();
-        const users = JSON.parse(localStorage.getItem('users')) || [];
-        const userIndex = users.findIndex(user => user.email === userLoggedIn.email);
+        try {
+            const user = auth.currentUser;
+            if (!user) throw new Error("No hay usuario autenticado en Firebase");
 
-        if (userIndex !== -1) {
-            const hashedPassword = CryptoJS.SHA256(newPassword + salt).toString();
-            users[userIndex].password_hash = hashedPassword;
-            users[userIndex].salt = salt;
-            users[userIndex].is_first_login = false;
+            // Actualizar la contraseña en Firebase Authentication
+            await updatePassword(user, newPassword);
 
-            localStorage.setItem('users', JSON.stringify(users));
-            console.log('Password updated successfully for:', users[userIndex]);
+            // Actualizar Firestore para indicar que ya no es el primer inicio de sesión
+            const userDocRef = doc(db, "users", user.uid);
+            await updateDoc(userDocRef, { is_first_login: false });
 
-            const updatedUser = users[userIndex];
-            sessionStorage.setItem('user_logged_in', JSON.stringify(updatedUser));
+            console.log("Contraseña actualizada correctamente.");
+            alert("Tu contraseña ha sido actualizada con éxito.");
+            
+            // Redirigir al usuario después del cambio de contraseña
+            window.location.href = "../index.html"; 
 
-            window.location.href = "../pages/admin.html";
-        } else {
-            console.error("Usuari no trobat al sistema.");
+        } catch (error) {
+            console.error("Error al cambiar la contraseña:", error.message);
+            alert("Error al cambiar la contraseña: " + error.message);
         }
     });
 });
@@ -48,14 +51,13 @@ function comparePassword() {
     errorMessage.hide();
 
     if (pass1 !== pass2 || pass1 === '') {
-        errorMessage.text("Las contraseñas no coinccideixen o estan buides");
+        errorMessage.text("Las contraseñas no coinciden o están vacías.");
         errorMessage.show();
         return null;
     }
 
-    const isValidPassword = validatePassword(pass1);
-    if (!isValidPassword) {
-        errorMessage.text("La contrasenya ha de tenir al menys 12 caracters, amb majúscules, minúscules, nombres y caracteres especials.");
+    if (!validatePassword(pass1)) {
+        errorMessage.text("La contraseña debe tener al menos 12 caracteres, incluyendo mayúsculas, minúsculas, números y caracteres especiales.");
         errorMessage.show();
         return null;
     }
@@ -63,3 +65,10 @@ function comparePassword() {
     return pass1;
 }
 
+<<<<<<< HEAD
+=======
+function validatePassword(password) {
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,}$/;
+    return passwordRegex.test(password);
+}
+>>>>>>> bf738943d7669cf1a802274c5e4612b70dd1e062
