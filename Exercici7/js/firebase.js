@@ -185,9 +185,6 @@ export async function updateUser(userId, userData) {
   }
 };
 
-
-// ...existing code...
-
 // Funciones para manejar noticias
 export async function createNews(newsData) {
   try {

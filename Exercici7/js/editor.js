@@ -1,7 +1,10 @@
 import { createNews, updateNews, deleteNews, getNews, getAuth } from './firebase.js';
 
+const currentUser = JSON.parse(localStorage.getItem('user'));
+        if (!currentUser || (!currentUser.edit_news && currentUser.role !== 'admin')) {
+        window.location.href = '../index.html';
+    }
 
-// Al inicio del archivo, después de los imports
 const auth = getAuth();
 
 // Define functions in global scope

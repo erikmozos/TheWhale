@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="../styles/noticies.css">
     <link rel="stylesheet" href="../assets/libreries/fontawesome-free-6.6.0-web/fontawesome-free-6.6.0-web/css/all.min.css">
 </head>
-<body>
+<body class="flex flex-col min-h-screen bg-gray-50">
 
-    <header>
+    <!-- Header fijo en la parte superior -->
+    <header class="w-full z-50">
         <i id="menu-icon" class="fa-solid fa-bars"></i>
         <img class="logo-img" src="../img/logo_aula_museu-removebg-preview.png" alt="logo-whale" />
         <nav class="mobile-navbar">
@@ -35,17 +36,22 @@
             </ul>
         </nav>
         <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
-        <input type="text" id="search-input" placeholder="Buscar..." style="display: none;">
+        <input type="text" id="search-input" placeholder="Buscar..." class="hidden">
     </header>
-    <div class="container mx-auto px-4 py-8">
+    
+    <!-- Contenido principal con margen superior para compensar el header -->
+    <main class="flex-grow container mx-auto px-4 py-8 mt-24">
         <h1 class="text-3xl font-bold mb-6">Borradors de Noticies</h1>
         
-        <div id="borradores-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-           
+        <div id="loading-message" class="text-center py-8 text-gray-600 text-lg">Cargando borradores...</div>
+        
+        <div id="borradores-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 min-h-[300px]">
+           <!-- Aquí se cargarán los borradores dinámicamente -->
         </div>
-    </div>
+    </main>
 
-    <footer>
+    <!-- Footer en la parte inferior -->
+    <footer class="w-full mt-auto">
         <div class="footer-content">
             <p>&copy; 2024 TheWale. All rights reserved to Erik Mozos.</p>
             <div class="social-icons">
@@ -58,6 +64,7 @@
             <p>Visitan's a la nostra pàgina web del institut www.iesjoanramis.org.</p>
         </div>
     </footer>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script type="module" src="../js/checkuser.js"></script>

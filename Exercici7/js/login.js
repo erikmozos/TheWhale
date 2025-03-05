@@ -1,13 +1,13 @@
 import { userLogIn } from "./firebase.js";
 
 $(document).ready(function () {
-  $('.login-container form').on("submit", async function (e) { // ✅ `async` agregado aquí
+  $('.login-container form').on("submit", async function (e) { 
     e.preventDefault();
 
     const email = $('#email').val().trim();
     const password = $('#password').val().trim();
 
-    const userData = await userLogIn(email, password); // ✅ `await` agregado
+    const userData = await userLogIn(email, password);
 
     if (userData) {
       console.log("Login exitoso:", userData);

@@ -107,7 +107,7 @@ $(document).ready(async function () {
         }
     
         try {
-            // Crear usuarios uno por uno
+            // Crear usuario un a un
             for (const [index, email] of emails.entries()) {
                 const userData = {
                     email: email,
@@ -128,7 +128,7 @@ $(document).ready(async function () {
             $('#createUsersForm')[0].reset();
             $('#emailInputsContainer').empty();
             
-            // Actualizar lista de usuarios
+            // Actualizar llista d usuaris
             users = await getUsers();
             renderUsers(users);
         } catch (error) {
@@ -137,14 +137,12 @@ $(document).ready(async function () {
         }
     });
 
-    // Cargar usuarios iniciales
     renderUsers(users);
 
     $(document).on('click', '.edit-user-btn', function() {
         const userId = $(this).data('id');
         const user = users.find(u => u.id === userId);
         
-        // Crear y mostrar el formulario de edición
         const editForm = `
             <div id="editUserForm" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center">
                 <div class="bg-white p-6 rounded-lg shadow-xl w-96">

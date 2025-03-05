@@ -6,7 +6,6 @@ $(document).ready(async function () {
     const userLoggedIn = JSON.parse(sessionStorage.getItem('user_logged_in')) || JSON.parse(localStorage.getItem('user'));
 
     if (!userLoggedIn) {
-        console.log('Usuario no autenticado, redirigiendo...');
         window.location.href = "../pages/logIn.html";
         return;
     }
@@ -17,23 +16,20 @@ $(document).ready(async function () {
         e.preventDefault();
 
         const newPassword = comparePassword();
-        if (!newPassword) return; // Si la validación falla, se detiene aquí.
+        if (!newPassword) return;
 
         try {
             const user = auth.currentUser;
             if (!user) throw new Error("No hay usuario autenticado en Firebase");
 
-            // Actualizar la contraseña en Firebase Authentication
             await updatePassword(user, newPassword);
 
-            // Actualizar Firestore para indicar que ya no es el primer inicio de sesión
             const userDocRef = doc(db, "users", user.uid);
             await updateDoc(userDocRef, { is_first_login: false });
 
             console.log("Contraseña actualizada correctamente.");
             alert("Contrasenya actualizada");
             
-            // Redirigir al usuario después del cambio de contraseña
             window.location.href = "../index.html"; 
 
         } catch (error) {
@@ -64,7 +60,6 @@ function comparePassword() {
 
     return pass1;
 }
-
 
 function validatePassword(password) {
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,}$/;
