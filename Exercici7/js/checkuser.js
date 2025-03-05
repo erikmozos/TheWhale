@@ -8,7 +8,7 @@ $(document).ready(function() {
     if (projectIndex !== -1) {
       return window.location.origin + path.substring(0, projectIndex + 10);
     } else {
-      return window.location.origin + '/Exercici7/';
+      return window.location.origin + '/TheWhale/Exercici7/';
     }
   };
 
