@@ -3,12 +3,12 @@ import { hasUsers, createDefaultUser, auth, signOut, onAuthStateChanged } from "
 $(document).ready(function() {
   const getAbsoluteBasePath = function () {
     const path = window.location.pathname;
-    const projectIndex = path.indexOf('/Exercici7/');
+    const projectIndex = path.indexOf('/TheWhale/Exercici7');
     
     if (projectIndex !== -1) {
       return window.location.origin + path.substring(0, projectIndex + 10);
     } else {
-      return window.location.origin + '/TheWhale/Exercici7/';
+      return window.location.origin + '/TheWhale/Exercici7';
     }
   };
 
